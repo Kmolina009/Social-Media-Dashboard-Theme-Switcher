@@ -59,16 +59,18 @@ const userData ={
         },
         getTotalFollowers:function (){
             return this.facebook.followers.qty
-            +this.twitter.followers.qty
-            +this.instagram.followers.qty
-            +this.youtube.subscribers.qty
+                    +this.twitter.followers.qty
+                    +this.instagram.followers.qty
+                    +this.youtube.subscribers.qty
         }
-    }
-        
-    
+    } 
 }
 //Functions
 
 $(document).ready(function(){
-   
+   //display total follower count
+   $('span.total-follower-qty').text(userData.sMediaProfiles.getTotalFollowers())
+//    $('span.total-follower-qty').ready(function(){
+//     $(this).css('font-family','arial');
+//    })
 })
