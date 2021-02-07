@@ -44,7 +44,7 @@ const userData ={
             }
         },
         youtube:{
-            subscribers:{
+            followers:{
                 qty:8239,
                 growth:-144
             },
@@ -56,32 +56,33 @@ const userData ={
                 qty:107,
                 growth:-19
             }
-        },
-        getTotalFollowers:function (){
-            return this.facebook.followers.qty
-                    +this.twitter.followers.qty
-                    +this.instagram.followers.qty
-                    +this.youtube.subscribers.qty
         }
-    } 
-}
+    },
+    getTotalFollowers:function (){
+        return this.sMediaProfiles.facebook.followers.qty
+                +this.sMediaProfiles.twitter.followers.qty
+                +this.sMediaProfiles.instagram.followers.qty
+                +this.sMediaProfiles.youtube.subscribers.qty
+        } 
+    }
+
 //Functions
 $(document).ready(function(){
     //display total follower count
-    $('span.total-follower-qty').text(userData.sMediaProfiles.getTotalFollowers())
+    // $('span.total-follower-qty').text(userData.sMediaProfiles.getTotalFollowers())
         //build follower card - 
             //While this page is loading 
                 //for each entry in user data object
                 //call function build card(it takes the user datas entries) 
-    $buildCard =function(user,platform){
-        console.log(user.sMediaProfiles[platform].followers.qty)
+    $buildFollowerCard =function(user,platform){
     return $followerCard=$([
+        "<h1>Testing</h1>",
         "<div class=\"follower-card\">",
         " <div class=\"follower-count\">",
         "    <figure>",
         "       <span class=\"sm-icon\">",
         // use class in css style of fb-icon
-        `        <i class=\"${platform}-icon\"></i>`,
+        `        <span class=\"${platform}-icon\"></span>`,
         "         <a href=\"http://\" target=\"_blank\" rel=\"noopener noreferrer\">@nathanf</a>",
         "         <p>This is FaceBook Follower Data</p>",
         `         <p>${userData.sMediaProfiles[platform].followers.qty}</p>`,
@@ -90,12 +91,15 @@ $(document).ready(function(){
         "    <figure>",
         " </div>",
         " </div>",
-        "<h1>Testing</h1>",
+        
         
         "</div>"
     ].join("\n"));
 }
-    console.log($buildCard(userData,"facebook"))
-    //Test Append
-    $('body').append($buildCard(userData,"facebook"))
+//generate follower stats
+        for(let profile in userData.sMediaProfiles){
+            $('.follower-stat-container').append($buildFollowerCard(userData,profile))
+        }
+//generate Like and follow stats
     })
+
