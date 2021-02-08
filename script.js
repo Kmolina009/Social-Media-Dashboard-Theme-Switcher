@@ -141,7 +141,7 @@ $(document).ready(function(){
         for(let profile in userData.sMediaProfiles){
             $('.follower-stat-container').append($buildFollowerCard(userData,profile))
         }
-        $('body').append($buildLikeViewCard(userData,"facebook"))
+//         $('body').append($buildLikeViewCard(userData,"facebook"))
 //generate Like and follow stats
     })
 
