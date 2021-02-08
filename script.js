@@ -66,11 +66,16 @@ const userData ={
         return this.sMediaProfiles.facebook.followers.qty
                 +this.sMediaProfiles.twitter.followers.qty
                 +this.sMediaProfiles.instagram.followers.qty
-                +this.sMediaProfiles.youtube.subscribers.qty
+                +this.sMediaProfiles.youtube.followers.qty
             } 
         }
 //Functions
-
+// growth styling
+let growthIndicator = function(growthStat){
+    console.log(growthStat)
+    // return growthStat>0?".positive-growth":".negative-growth";
+    // console.log("This function has beem called");
+};
 //JQuery Component construction
     $buildFollowerCard =function(user,platform){
         return $followerCard=$([
@@ -79,7 +84,6 @@ const userData ={
             " <div class=\"follower-count\">",
             "    <figure>",
             "       <span class=\"sm-icon\">",
-            // use class in css style of fb-icon
             `        <span class=\"${platform}-icon\"></span>`,
             "         <a href=\"http://\" target=\"_blank\" rel=\"noopener noreferrer\">@nathanf</a>",
             "         <p>This is FaceBook Follower Data</p>",
@@ -94,35 +98,40 @@ const userData ={
             "</div>"
         ].join("\n"));
     }
-$buildLikeViewCard=function(){
+    //test - FB Data
+$buildLikeViewCard=function(user,platform){
+    //retrieve certain stats
+    // console.log(growthIndicator(user.sMediaProfiles.platform.likes.growth));
     return $likeViewCard=$([
         "<h1>TESTING</h1>",
 "        <div class=\"daily-like-view-container\">",
 "        <div class=\"like-view\">",
-"          <p>Page Views</p>",
-"          <p>87</p>",
-"          <figure class=\"s-media-icon\"></figure>",
+`          <p>${user.sMediaProfiles[platform].views.viewTerm}</p>`,
+`          <p>${user.sMediaProfiles[platform].views.qty}</p>`,
+`          <figure class=\"${platform}-icon\"></figure>`,
 "          <div class=\"stat\">",
-"            <figure class=\"growth-arrow\"></figure>",
-"            <p>3%</p>",
+// conditional statement
+`            <figure class=\".positive-growth\"></figure>`,
+`            <p>${user.sMediaProfiles[platform].views.growth*100}%</p>`,
 "          </div>",
 "        </div>",
 "        <div class=\"like-view\">  ",
 "          <p> Likes</p>",
-"          <p>52</p>",
-"          <figure class=\"s-media-icon\"></figure>",
+`          <p>${user.sMediaProfiles[platform].likes.qty}</p>`,
+`          <figure class=\"${platform}-icon\"></figure>`,
 "          <div class=\"stat\">",
-"            <figure class=\"growth-arrow\"></figure>",
-"            <p>2%</p>",
+// conditional statement if 
+`            <figure class=\".negative-growth\"></figure>`,
+`            <p>${user.sMediaProfiles[platform].likes.growth*100}</p>`,
 "          </div>",
 "        </div>",
 "      </div>"
-    ].join(""))
+    ].join("\n"))
 }
 
 $(document).ready(function(){
     //display total follower count
-    // $('span.total-follower-qty').text(userData.sMediaProfiles.getTotalFollowers())
+    $('span.total-follower-qty').text(userData.getTotalFollowers())
         //build follower card - 
             //While this page is loading 
                 //for each entry in user data object
@@ -132,7 +141,7 @@ $(document).ready(function(){
         for(let profile in userData.sMediaProfiles){
             $('.follower-stat-container').append($buildFollowerCard(userData,profile))
         }
-        $('body').append($buildLikeViewCard())
+        $('body').append($buildLikeViewCard(userData,"facebook"))
 //generate Like and follow stats
     })
 

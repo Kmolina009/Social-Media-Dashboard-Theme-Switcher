@@ -88,3 +88,16 @@ table {
     width: 20px;
     background-image:url(images/icon-youtube.svg);
 }
+.negative-growth{
+    display: block;
+    width:15px;
+    height:11px;
+    background-image: url(images/icon-down.svg);
+}
+.positive-growth{
+    display: block;
+    width:15px;
+    height:11px;
+    background-image: url(images/icon-up.svg);
+}
+
