@@ -5,200 +5,130 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Social Media Dashboard</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-<header>
-  Social Media Dashboard
-  Total Followers: 23,004
-</header>
+  <header>
+    <title>Social Media Dashboard</title>
+    <h1>Total Followers: <span class="total-follower-qty"></span></h1>
+  </header>
+  <div class="header-backdrop"></div>
   <main class="theme-switcher">
+    <div id="theme-switcher-container">
+      <p>Dark Mode</p>
+      <div class="theme-switcher">
+        <div class="theme-switch-btn"></div>
+      </div>
+    </div>
 
+    <section class="stat-container">
+      <!-- TODO rewrite markup so it dynamical generates the structure with javascript -->
+      <section class="follower-stat-container">
+      </section>
+
+      <section class="daily-like-view-container">
+      <h1>
+        Overview - Today
+      </h1>  
+      <!-- FB Data -->
+        <div class="daily-like-view-container">
+          <div class="like-view">
+            <p>Page Views</p>
+            <p>87</p>
+            <figure class="s-media-icon"></figure>
+            <div class="stat">
+              <figure class="growth-arrow"></figure>
+              <p>3%</p>
+            </div>
+          </div>
+
+          <div class="like-view">  
+            <p> Likes</p>
+            <p>52</p>
+            <figure class="s-media-icon"></figure>
+            <div class="stat">
+              <figure class="growth-arrow"></figure>
+              <p>2%</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instagram Data -->
+        <div class="daily-like-view-container">
+          <div class="like-view">
+            <p>Likes</p>
+            <p>5462</p>
+            <figure class="s-media-icon"></figure>
+            <div class="stat">
+              <figure class="growth-arrow"></figure>
+              <p>2257%</p>
+            </div>
+          </div>
+
+          <div class="like-view">
+            
+            
+            <p>Profile Views</p>
+            <p>52k</p>
+            <figure class="s-media-icon"></figure>
+            <div class="stat">
+              <figure class="growth-arrow"></figure>
+              <p>1375%</p>
+            </div>
+          </div>
+        </div>
+        <!-- Twitter Data -->
+        <div class="daily-like-view-container">
+          <div class="like-view">
+            <p>Retweets</p>
+            <p>117</p>
+            <figure class="s-media-icon"></figure>
+            <div class="stat">
+              <figure class="growth-arrow"></figure>
+              <p>303%</p>
+            </div>
+          </div>
+
+          <div class="like-view">
+            <p>Likes</p>
+            <p>507</p>
+            <figure class="s-media-icon"></figure>
+            <div class="stat">
+              <figure class="growth-arrow"></figure>
+              <p>553%</p>
+            </div>
+          </div>
+        </div>
+    <!-- Youtube Data -->
+        <div class="daily-like-view-container">
+          <div class="like-view">
+            <p>Likes</p>
+            <p>107</p>
+            <figure class="s-media-icon"></figure>
+            <div class="stat">
+              <figure class="growth-arrow"></figure>
+              <p>19%</p>
+            </div>
+          </div>
+
+          <div class="like-view">
+            <p>Total Views</p>
+            <p>1407</p>
+            <figure class="s-media-icon"></figure>
+            <div class="stat">
+              <figure class="growth-arrow"></figure>
+              <p>12%</p>
+            </div>
+          </div>
+        </div>
+      </section> 
+      </section>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Keven Molina</a>.
+    </div>
   </main>
-<div id="theme-switcher-container">
-  <p>Dark Mode</p>
-  <div class="theme-switcher">
-    <div class="theme-switch-btn"></div>
-  </div>
-</div>
-
-
-  <section class="stat-container">
-    <!-- TODO rewrite markup so it dynamical generates the structure with javascript -->
-<!-- Facebook -->
-    <div class="follower-card">
-      <div class="follower-count">
-        <figure>
-          <span class="sm-icon"></span>
-          <a href="http://" target="_blank" rel="noopener noreferrer">@nathanf</a>
-        </figure>
-       <p>1987</p> 
-       <p>Followers</p> 
-      </div>
-      <div>
-        <figure></figure>
-        <p>12</p>
-        <p>Today</p>  
-      </div>
-    </div>
-    
-  <div class="follower-card">
-    <figure>
-      <span class="sm-icon"></span>
-      <a href="http://" target="_blank" rel="noopener noreferrer">@nathanf</a>
-    </figure>
-   <p>1044</p> 
-   <p>Followers</p>
-    <div>
-      <figure></figure>
-      <p>99</p>
-      <p>Today</p>  
-    </div>
-     
-  </div>
-
-    
-  <div class="follower-card">
-    <div class="follower-count">
-      <figure>
-        <span class="sm-icon"></span>
-        <a href="http://" target="_blank" rel="noopener noreferrer">@realnathanf</a>
-      </figure>
-     <p>11k</p> 
-     <p>Followers</p> 
-    </div>
-    <div>
-      <p>1099</p>
-      <p>Today</p>  
-    </div>
-  </div>
-  
-  <div class="follower-card">
-    <div class="follower-count">
-      <figure>
-        <span class="sm-icon"></span>
-        <a href="http://" target="_blank" rel="noopener noreferrer">Nathan F.</a>
-      </figure>
-     <p>8239</p> 
-     <p>Subscribers</p> 
-    </div>
-    <div>
-      <p>144</p>
-      <p>Today</p>  
-    </div>
-  </div>
-   
-</div>
-  
-  
-  <section class="daily-like-view-container">
-  <h1>
-    Overview - Today
-  </h1>  
-  <!-- FB Data -->
-    <div class="daily-like-view-container">
-      <div class="like-view">
-        <p>Page Views</p>
-        <p>87</p>
-        <figure class="s-media-icon"></figure>
-        <div class="stat">
-          <figure class="growth-arrow"></figure>
-          <p>3%</p>
-        </div>
-      </div>
-
-      <div class="like-view">  
-        <p> Likes</p>
-        <p>52</p>
-        <figure class="s-media-icon"></figure>
-        <div class="stat">
-          <figure class="growth-arrow"></figure>
-          <p>2%</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Instagram Data -->
-    <div class="daily-like-view-container">
-      <div class="like-view">
-        <p>Likes</p>
-        <p>5462</p>
-        <figure class="s-media-icon"></figure>
-        <div class="stat">
-          <figure class="growth-arrow"></figure>
-          <p>2257%</p>
-        </div>
-      </div>
-
-      <div class="like-view">
-        
-        
-        <p>Profile Views</p>
-        <p>52k</p>
-        <figure class="s-media-icon"></figure>
-        <div class="stat">
-          <figure class="growth-arrow"></figure>
-          <p>1375%</p>
-        </div>
-      </div>
-    </div>
-    <!-- Twitter Data -->
-    <div class="daily-like-view-container">
-      <div class="like-view">
-        <p>Retweets</p>
-        <p>117</p>
-        <figure class="s-media-icon"></figure>
-        <div class="stat">
-          <figure class="growth-arrow"></figure>
-          <p>303%</p>
-        </div>
-      </div>
-
-      <div class="like-view">
-        <p>Likes</p>
-        <p>507</p>
-        <figure class="s-media-icon"></figure>
-        <div class="stat">
-          <figure class="growth-arrow"></figure>
-          <p>553%</p>
-        </div>
-      </div>
-    </div>
-<!-- Youtube Data -->
-    <div class="daily-like-view-container">
-      <div class="like-view">
-        <p>Likes</p>
-        <p>107</p>
-        <figure class="s-media-icon"></figure>
-        <div class="stat">
-          <figure class="growth-arrow"></figure>
-          <p>19%</p>
-        </div>
-      </div>
-
-      <div class="like-view">
-        <p>Total Views</p>
-        <p>1407</p>
-        <figure class="s-media-icon"></figure>
-        <div class="stat">
-          <figure class="growth-arrow"></figure>
-          <p>12%</p>
-        </div>
-      </div>
-    </div>
-</section>
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Keven Molina</a>.
-  </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="script.js"></script>
 </body>
