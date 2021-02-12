@@ -71,7 +71,6 @@ table {
 --YouTube: hsl(348, 97%, 39%);
 
 
-
 /* Dark Mode Colors */
 
 --Very-Dark-Blue-BG: hsl(230, 17%, 14%);
@@ -183,7 +182,8 @@ right: 10px;
 - Desktop: 1440px 
 */
 /****************************************Theme Switcher Styling******************************************************************/
-/* Dark Theme Components */
+
+/************************Dark Theme Components********************************************************/
 body.dark-theme{
     background-color: var(--Very-Dark-Blue-BG);
 }
@@ -206,9 +206,30 @@ body.dark-theme{
 .follower-card.dark-theme, .daily-like-view-container h1,.like-view.dark-theme,.header-backdrop.dark-theme,div.platform-username > a.dark-theme{
     color:var(--White-Text); 
 }
-/* Light Theme Components */
-/* .light-theme{} */
+/************************Light Theme Components********************************************************/
 
+body.light-theme{
+    background-color: var(--White-BG);
+}
+.header-backdrop.light-theme{
+    position: absolute; 
+    top:0px;
+    left:0px; 
+    background-color: var(--Very-Pale-Blue-Top-BG-Pattern);    
+}
+
+.follower-card.light-theme, .like-view.light-theme{
+    background-color: var(--Light-Grayish-Blue-Card-BG);
+}
+
+.like-view.light-theme:hover,.like-view.light-theme:hover{
+    background-color: var(--Dark-Grayish-Blue-Text);
+}
+/* Ligth Theme Text Styling */
+.follower-card.light-theme, .daily-like-view-container h1,.like-view.light-theme,.header-backdrop.light-theme,div.platform-username > a.light-theme{
+    color:var(--Very-Dark-Blue-Text); 
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 body{
     display: flex;
     flex-direction: column;
@@ -218,6 +239,7 @@ body{
     /* border: #343A4E 1px solid; */
     font-family: 'Inter', sans-serif;
 }
+/************************Header Component********************************************************/
 header{
     position: absolute;
     left: 40px;
@@ -272,6 +294,7 @@ main{
     height: 728px;
     width: 1342px;
 }
+/************************Theme Switcher Component********************************************************/
 .theme-switcher-container{
     position: absolute;
     left:90%;
@@ -312,6 +335,7 @@ main{
     top: 158px;
     left: 50px;
 }
+/************************Follower-Stat Components********************************************************/
 .follower-stat-container{
     display: flex;
     flex-direction: row;
@@ -358,6 +382,7 @@ div.platform-username > a{
  
     text-decoration: none;
 }
+/************************ Daily Like View Stat Components********************************************************/
 /* .daily-like-view-container and all of it's contents*/
 .daily-like-view-container{
     display: flex;
@@ -392,7 +417,7 @@ div.platform-username > a{
     width: 652px;
     border-radius: 10px;
 }
-/******************************************* Like-View Card and it's Child Elements **********************************************/
+/******************************************* Like-View-Card and it's Child Elements **********************************************/
 .like-view{
     display: flex;
     flex-direction: row;
