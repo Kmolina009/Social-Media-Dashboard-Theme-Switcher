@@ -67,7 +67,10 @@ const userData ={
                 +this.sMediaProfiles.twitter.followers.qty
                 +this.sMediaProfiles.instagram.followers.qty
                 +this.sMediaProfiles.youtube.followers.qty
-            } 
+            } ,
+    tenThousandPlus:function(stat){
+        return stat>9999? `${String(stat).substring(0, 2)}k`:stat;
+    }
         }
 //Functions
 // growth styling
@@ -79,17 +82,16 @@ let growthIndicator = function(growthStat){
 //JQuery Component construction
     $buildFollowerCard =function(user,platform){
         return $followerCard=$([
-            "<h1>Testing</h1>",
-            "<div class=\"follower-card\">",
+            "<div class=\"follower-card dark-theme\">",
+            `  <div class=\"card-top-decoration ${platform}-decoration\"></div>`,
+            "       <div class=\"platform-username\">",
+            `        <span class=\"sm-icon ${platform}-icon\"></span>`,
+            "         <a class=\"dark-theme\" href=\"http://\" target=\"_blank\" rel=\"noopener noreferrer\">@nathanf</a>",
+            "       </div>",
             " <div class=\"follower-count\">",
             "    <figure>",
-            "       <span class=\"sm-icon\">",
-            `        <span class=\"${platform}-icon\"></span>`,
-            "         <a href=\"http://\" target=\"_blank\" rel=\"noopener noreferrer\">@nathanf</a>",
-            "         <p>This is FaceBook Follower Data</p>",
-            `         <p>${userData.sMediaProfiles[platform].followers.qty}</p>`,
+            `         <p class="follower-count">${userData.sMediaProfiles[platform].followers.qty}</p>`,
             "         <p>Followers</p>",
-            "       </span>",
             "    <figure>",
             " </div>",
             " </div>",
@@ -98,7 +100,7 @@ let growthIndicator = function(growthStat){
             "</div>"
         ].join("\n"));
     }
-    //test - FB Data
+//Currently ICE BOXED
 $buildLikeViewCard=function(user,platform){
     //retrieve certain stats
     // console.log(growthIndicator(user.sMediaProfiles.platform.likes.growth));
