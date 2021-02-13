@@ -79,7 +79,14 @@ let growthIndicator = function(growthStat){
     // return growthStat>0?".positive-growth":".negative-growth";
     // console.log("This function has beem called");
 };
-//JQuery Component construction
+//JQuery function and components
+//Store theme-switcher
+
+//Theme Switch
+$themeSwitcher=$(".theme-switcher-container");
+//Switch btn/actuator
+$themeBtn=$('.theme-switcher-btn');
+// Component construction
     $buildFollowerCard =function(user,platform){
         return $followerCard=$([
             "<div class=\"follower-card dark-theme\">",
@@ -131,14 +138,34 @@ $buildLikeViewCard=function(user,platform){
     ].join("\n"))
 }
 
+// *******************************Change Theme Functions*******************************************
+function assignDarkTheme(){
+    $('.dark-theme').toggleClass("dark-theme light-theme");
+}
+function assignLightTheme(){
+    $('.light-theme').toggleClass("light-theme dark-theme");
+}
+
+
+function changeTheme(){
+    let $themeStatus=$(".theme-switcher-container > p");
+    // console.log($themeStatus =="Dark Mode")
+    // $Assign =$(this).text().trim()=="Dark Mode")? assignLightTheme():assignDarkTheme();
+    // ($(this).text().trim()=="Dark Mode")? $themeStatus.text("Light Mode"):$themeStatus.text("Dark Mode")
+     ($themeStatus.text()=="Dark Mode")? $themeStatus.text("Light Mode"):$themeStatus.text("Dark Mode");
+    if ($themeStatus=="Dark Mode") {
+        console.log("This works")
+    }
+}
+
 $(document).ready(function(){
     //display total follower count
     $('span.total-follower-qty').text(userData.getTotalFollowers())
-        //build follower card - 
-            //While this page is loading 
-                //for each entry in user data object
-                //call function build card(it takes the user datas entries) 
 
+    // Opt for a toggle function
+    // $(".theme-switcher-container").on("click",changeTheme);
+    $(".theme-switcher-container").on("click",changeTheme);
+    // $themeBtn.click($changeTheme);
 //generate follower stats
         for(let profile in userData.sMediaProfiles){
             $('.follower-stat-container').append($buildFollowerCard(userData,profile))
