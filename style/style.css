@@ -80,7 +80,9 @@ table {
 --White-Text: hsl(0, 0%, 100%);
 
 /* Dark Theme for toggle*/
---Toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+/* --dark-Toggle-color1: 210, 78%, 56%; */
+--dark-Toggle-color1: hsl(210, 78%, 56%);
+--dark-Toggle-color2: hsl(146, 68%, 55%);
 
 /* Light Mode Colors */
 --White-BG: hsl(0, 0%, 100%);
@@ -90,7 +92,7 @@ table {
 --Very-Dark-Blue-Text: hsl(230, 17%, 14%);
 
 /* Light Theme for toggle*/
---Toggle: hsl(230, 22%, 74%);
+--light-Toggle: hsl(230, 22%, 74%);
 
 }
 
@@ -100,8 +102,8 @@ table {
     width: 100px;
 }
 .sm-icon{
-position: relative;
-right: 10px;
+    position: relative;
+    right: 10px;
 }
 /* Note - Refactor so social media profile icons are dynamically retrieved */
 
@@ -198,10 +200,12 @@ body.dark-theme{
     background-color: var(--Dark-Desaturated-Blue-Card-BG);
 }
 
-.like-view.dark-theme:hover,.like-view.dark-theme:hover{
+.follower-card.dark-theme:hover,.like-view.dark-theme:hover{
     background-color: var(--Desaturated-Blue-Text);
 }
-
+.theme-switcher.dark-theme{
+    background-color: linear-gradient(0.25turn,--dark-Toggle-color1,--dark-Toggle-color2)
+}
 /* Dark mode Text Styling*/
 .follower-card.dark-theme, .daily-like-view-container h1,.like-view.dark-theme,.header-backdrop.dark-theme,div.platform-username > a.dark-theme{
     color:var(--White-Text); 
@@ -222,8 +226,11 @@ body.light-theme{
     background-color: var(--Light-Grayish-Blue-Card-BG);
 }
 
-.like-view.light-theme:hover,.like-view.light-theme:hover{
+.follower-card.light-theme:hover,.like-view.light-theme:hover{
     background-color: var(--Dark-Grayish-Blue-Text);
+}
+.theme-switcher.light-theme{
+    background-color: var(--light-Toggle);
 }
 /* Ligth Theme Text Styling */
 .follower-card.light-theme, .daily-like-view-container h1,.like-view.light-theme,.header-backdrop.light-theme,div.platform-username > a.light-theme{

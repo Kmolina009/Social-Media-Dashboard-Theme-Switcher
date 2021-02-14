@@ -79,7 +79,14 @@ let growthIndicator = function(growthStat){
     // return growthStat>0?".positive-growth":".negative-growth";
     // console.log("This function has beem called");
 };
-//JQuery Component construction
+//JQuery function and components
+//Store theme-switcher
+
+//Theme Switch
+$themeSwitcher=$(".theme-switcher-container");
+//Switch btn/actuator
+$themeBtn=$('.theme-switcher-btn');
+// Component construction
     $buildFollowerCard =function(user,platform){
         return $followerCard=$([
             "<div class=\"follower-card dark-theme\">",
@@ -131,15 +138,28 @@ $buildLikeViewCard=function(user,platform){
     ].join("\n"))
 }
 
+// *******************************Change Theme Functions*******************************************
+let $themeStatus=$(".theme-switcher-container > p");
+function changeTheme(){
+    //explictly adding and removing classes
+    function assignDarkTheme(){
+        $themeStatus.text("Dark Mode");
+        $(".light-theme").addClass("dark-theme");
+        $(".dark-theme").removeClass("light-theme");
+    }
+    function assignLightTheme(){
+        $themeStatus.text("Light Mode");
+        $(".dark-theme").addClass("light-theme");
+        $(".light-theme").removeClass("dark-theme");
+    }
+    ($themeStatus.text()!=="Light Mode")?assignLightTheme():assignDarkTheme();
+}
+
 $(document).ready(function(){
     //display total follower count
-    $('span.total-follower-qty').text(userData.getTotalFollowers())
-        //build follower card - 
-            //While this page is loading 
-                //for each entry in user data object
-                //call function build card(it takes the user datas entries) 
-
-//generate follower stats
+    $('span.total-follower-qty').text(userData.getTotalFollowers());
+    // Change theme
+    $(".theme-switcher-container").on("click",changeTheme);
         for(let profile in userData.sMediaProfiles){
             $('.follower-stat-container').append($buildFollowerCard(userData,profile))
         }
