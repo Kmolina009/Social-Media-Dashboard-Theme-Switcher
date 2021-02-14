@@ -389,6 +389,10 @@ div.platform-username > a{
  
     text-decoration: none;
 }
+.daily-follower-stat{
+    display: flex;
+    flex-direction: row;
+}
 /************************ Daily Like View Stat Components********************************************************/
 /* .daily-like-view-container and all of it's contents*/
 .daily-like-view-container{

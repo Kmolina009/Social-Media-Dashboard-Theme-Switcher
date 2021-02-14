@@ -70,15 +70,24 @@ const userData ={
             } ,
     tenThousandPlus:function(stat){
         return stat>9999? `${String(stat).substring(0, 2)}k`:stat;
-    }
+    },
+    //Methods
+// Growth Indication
+/*
+determine what the styling of a compoent should based on the data being
+negative or positive.
+
+create a component that will have the following appeneded
+growthIndicator-Output, Growthstat, "Today"
+*/
+  growthComponent:function(cardComponent){
+
+  },
+    growthIndicator:function(growthStat){
+    return (growthStat>0)?".positive-growth":".negative-growth";
+}
         }
-//Functions
-// growth styling
-let growthIndicator = function(growthStat){
-    console.log(growthStat)
-    // return growthStat>0?".positive-growth":".negative-growth";
-    // console.log("This function has beem called");
-};
+
 //JQuery function and components
 //Store theme-switcher
 
@@ -101,6 +110,13 @@ $themeBtn=$('.theme-switcher-btn');
             "         <p>Followers</p>",
             "    <figure>",
             " </div>",
+            "<div class=\".daily-follower-stat\">",
+// conditional statement
+`            <figure class=\".positive-growth\"></figure>`,
+// `            <p>${user.sMediaProfiles[platform].views.growth*100}%</p>`,
+`            <p>${100}%</p>`,
+`            <p>Today</p>`,
+"          </div>",
             " </div>",
             
             
