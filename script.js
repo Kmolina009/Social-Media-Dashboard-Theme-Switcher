@@ -139,34 +139,27 @@ $buildLikeViewCard=function(user,platform){
 }
 
 // *******************************Change Theme Functions*******************************************
-function assignDarkTheme(){
-    $('.dark-theme').toggleClass("dark-theme light-theme");
-}
-function assignLightTheme(){
-    $('.light-theme').toggleClass("light-theme dark-theme");
-}
-
-
+let $themeStatus=$(".theme-switcher-container > p");
 function changeTheme(){
-    let $themeStatus=$(".theme-switcher-container > p");
-    // console.log($themeStatus =="Dark Mode")
-    // $Assign =$(this).text().trim()=="Dark Mode")? assignLightTheme():assignDarkTheme();
-    // ($(this).text().trim()=="Dark Mode")? $themeStatus.text("Light Mode"):$themeStatus.text("Dark Mode")
-     ($themeStatus.text()=="Dark Mode")? $themeStatus.text("Light Mode"):$themeStatus.text("Dark Mode");
-    if ($themeStatus=="Dark Mode") {
-        console.log("This works")
+    //explictly adding and removing classes
+    function assignDarkTheme(){
+        $themeStatus.text("Dark Mode");
+        $(".light-theme").addClass("dark-theme");
+        $(".dark-theme").removeClass("light-theme");
     }
+    function assignLightTheme(){
+        $themeStatus.text("Light Mode");
+        $(".dark-theme").addClass("light-theme");
+        $(".light-theme").removeClass("dark-theme");
+    }
+    ($themeStatus.text()!=="Light Mode")?assignLightTheme():assignDarkTheme();
 }
 
 $(document).ready(function(){
     //display total follower count
-    $('span.total-follower-qty').text(userData.getTotalFollowers())
-
-    // Opt for a toggle function
-    // $(".theme-switcher-container").on("click",changeTheme);
+    $('span.total-follower-qty').text(userData.getTotalFollowers());
+    // Change theme
     $(".theme-switcher-container").on("click",changeTheme);
-    // $themeBtn.click($changeTheme);
-//generate follower stats
         for(let profile in userData.sMediaProfiles){
             $('.follower-stat-container').append($buildFollowerCard(userData,profile))
         }
