@@ -71,16 +71,6 @@ const userData ={
     tenThousandPlus:function(stat){
         return stat>9999? `${String(stat).substring(0, 2)}k`:stat;
     },
-    //Methods
-// Growth Indication
-/*
-determine what the styling of a compoent should based on the data being
-negative or positive.
-
-Get the 
-create a component that will have the following appeneded
-    -growthIndicator-Output, Growthstat, "Today"
-*/
 
     growthIndicator:function(growthStat){
         return (growthStat>0)?"positive-growth":"negative-growth";
@@ -114,7 +104,7 @@ $themeBtn=$('.theme-switcher-btn');
             "          </div>",
             "    <div class=\"follower-count\">",
             "       <figure>",
-            `            <p class="follower-count">${user.sMediaProfiles[platform].followers.qty}</p>`,
+            `            <p class="follower-count">${user.tenThousandPlus(user.sMediaProfiles[platform].followers.qty)}</p>`,
             "            <p>Followers</p>",
             "       <figure>",
             "    </div>",
