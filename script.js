@@ -163,7 +163,9 @@ $buildLikeViewCard=function(user,platform){
 
 function followerStatStyling(){
         $('.follower-stat-container').find(".daily-follower-stat ").find(".positive-growth ").parent().addClass("posiGrowthIndicator")
-        $('.follower-stat-container').find(".daily-follower-stat ").find(".negative-growth ").parent().addClass("negaGrowthIndicator")    
+        $('.follower-stat-container').find(".daily-follower-stat ").find(".negative-growth ").parent().addClass("negaGrowthIndicator") 
+        $('.stat').find(".positive-growth").next().addClass('posiGrowthIndicator')   
+        $('.stat').find(".negative-growth").next().addClass('negaGrowthIndicator')   
     }  
 // *******************************Change Theme Functions*******************************************
 let $themeStatus=$(".theme-switcher-container > p");

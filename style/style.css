@@ -181,6 +181,26 @@ table {
     background-image: url(../images/icon-up.svg);
     background-repeat: no-repeat;
 }
+.stat .positive-growth{
+    position: relative;
+    top: 10px;
+    right: 15px;
+    display: block;
+    width:15px;
+    height:5px;
+    background-image: url(../images/icon-up.svg);
+    background-repeat: no-repeat;
+}
+.stat .negative-growth{
+    position: relative;
+    top: 10px;
+    right: 15px;
+    display: block;
+    width:15px;
+    height:5px;
+    background-image: url(../images/icon-down.svg);
+    background-repeat: no-repeat;
+}
 
 
 /* organize elements */
