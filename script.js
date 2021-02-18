@@ -77,49 +77,55 @@ const userData ={
 determine what the styling of a compoent should based on the data being
 negative or positive.
 
+Get the 
 create a component that will have the following appeneded
-growthIndicator-Output, Growthstat, "Today"
+    -growthIndicator-Output, Growthstat, "Today"
 */
-  growthComponent:function(cardComponent){
 
-  },
     growthIndicator:function(growthStat){
-    return (growthStat>0)?".positive-growth":".negative-growth";
+        return (growthStat>0)?"positive-growth":"negative-growth";
+    },
+    growthComponent:function(cardComponent,user,platform){
+        const userProfileGrowth=[
+    //call function to get the follower positive or negative growth
+    `           <figure class=${this.growthIndicator(user.sMediaProfiles[platform].views.growth)}></figure>`,
+    // get the quantity of follower growth
+    `           <p>${user.sMediaProfiles[platform].views.growth*100}%</p>`,
+    "           <p>Today</p>"
+    ].join("\n")
+    
+    return userProfileGrowth 
+    }
 }
-        }
-
 //JQuery function and components
-//Store theme-switcher
-
 //Theme Switch
 $themeSwitcher=$(".theme-switcher-container");
 //Switch btn/actuator
 $themeBtn=$('.theme-switcher-btn');
 // Component construction
     $buildFollowerCard =function(user,platform){
+        $followerGrowth = `${user.growthIndicator(user.sMediaProfiles[platform].followers.growth)}`;
         return $followerCard=$([
             "<div class=\"follower-card dark-theme\">",
-            `  <div class=\"card-top-decoration ${platform}-decoration\"></div>`,
-            "       <div class=\"platform-username\">",
-            `        <span class=\"sm-icon ${platform}-icon\"></span>`,
-            "         <a class=\"dark-theme\" href=\"http://\" target=\"_blank\" rel=\"noopener noreferrer\">@nathanf</a>",
-            "       </div>",
-            " <div class=\"follower-count\">",
-            "    <figure>",
-            `         <p class="follower-count">${userData.sMediaProfiles[platform].followers.qty}</p>`,
-            "         <p>Followers</p>",
-            "    <figure>",
+            `     <div class=\"card-top-decoration ${platform}-decoration\"></div>`,
+            "          <div class=\"platform-username\">",
+            `           <span class=\"sm-icon ${platform}-icon\"></span>`,
+            "            <a class=\"dark-theme\" href=\"http://\" target=\"_blank\" rel=\"noopener noreferrer\">@nathanf</a>",
+            "          </div>",
+            "    <div class=\"follower-count\">",
+            "       <figure>",
+            `            <p class="follower-count">${user.sMediaProfiles[platform].followers.qty}</p>`,
+            "            <p>Followers</p>",
+            "       <figure>",
+            "    </div>",
+            "  <div class=\"daily-follower-stat\">",
+            userData.growthComponent(this,userData,platform),
+            //TODO - Apply styling to adjacent elements to growth arrow(p tags)
+            //elements{color:red}
+            //elements{color:green}
+            console.log(this),
+            "   </div>",
             " </div>",
-            "<div class=\".daily-follower-stat\">",
-// conditional statement
-`            <figure class=\".positive-growth\"></figure>`,
-// `            <p>${user.sMediaProfiles[platform].views.growth*100}%</p>`,
-`            <p>${100}%</p>`,
-`            <p>Today</p>`,
-"          </div>",
-            " </div>",
-            
-            
             "</div>"
         ].join("\n"));
     }
@@ -146,6 +152,7 @@ $buildLikeViewCard=function(user,platform){
 `          <figure class=\"${platform}-icon\"></figure>`,
 "          <div class=\"stat\">",
 // conditional statement if 
+// `            <figure class=\".negative-growth\"></figure>`,
 `            <figure class=\".negative-growth\"></figure>`,
 `            <p>${user.sMediaProfiles[platform].likes.growth*100}</p>`,
 "          </div>",
@@ -179,7 +186,5 @@ $(document).ready(function(){
         for(let profile in userData.sMediaProfiles){
             $('.follower-stat-container').append($buildFollowerCard(userData,profile))
         }
-//         $('body').append($buildLikeViewCard(userData,"facebook"))
-//generate Like and follow stats
     })
 

@@ -164,6 +164,8 @@ table {
     background-color: var(--YouTube);
 }
 .negative-growth{
+    position: relative;
+    top: 5px;
     display: block;
     width:15px;
     height:11px;
@@ -171,9 +173,11 @@ table {
     background-repeat: no-repeat;
 }
 .positive-growth{
+    position: relative;
+    top: 5px;
     display: block;
     width:15px;
-    height:11px;
+    height:5px;
     background-image: url(../images/icon-up.svg);
     background-repeat: no-repeat;
 }
@@ -342,6 +346,13 @@ main{
     top: 158px;
     left: 50px;
 }
+/*  */
+.negaGrowthIndicator{
+    color:red
+}
+.posiGrowthIndicator{
+    color:green
+}
 /************************Follower-Stat Components********************************************************/
 .follower-stat-container{
     display: flex;
@@ -390,8 +401,16 @@ div.platform-username > a{
     text-decoration: none;
 }
 .daily-follower-stat{
+    /* position: absolute; */
+    position: relative;
+    top: 25px;
+    /* top: 100px; */
     display: flex;
     flex-direction: row;
+    width: fit-content;
+    height: 19px;
+    flex-grow: inherit;
+    font-size: 10px;
 }
 /************************ Daily Like View Stat Components********************************************************/
 /* .daily-like-view-container and all of it's contents*/
