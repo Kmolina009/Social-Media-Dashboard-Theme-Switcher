@@ -348,10 +348,10 @@ main{
 }
 /*  */
 .negaGrowthIndicator{
-    color:red
+    color:var(--Bright-Red)
 }
 .posiGrowthIndicator{
-    color:green
+    color:var(--Lime-Green)
 }
 /************************Follower-Stat Components********************************************************/
 .follower-stat-container{

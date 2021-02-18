@@ -161,6 +161,10 @@ $buildLikeViewCard=function(user,platform){
     ].join("\n"))
 }
 
+function followerStatStyling(){
+        $('.follower-stat-container').find(".daily-follower-stat ").find(".positive-growth ").parent().addClass("posiGrowthIndicator")
+        $('.follower-stat-container').find(".daily-follower-stat ").find(".negative-growth ").parent().addClass("negaGrowthIndicator")    
+    }  
 // *******************************Change Theme Functions*******************************************
 let $themeStatus=$(".theme-switcher-container > p");
 function changeTheme(){
@@ -181,10 +185,13 @@ function changeTheme(){
 $(document).ready(function(){
     //display total follower count
     $('span.total-follower-qty').text(userData.getTotalFollowers());
+
     // Change theme
     $(".theme-switcher-container").on("click",changeTheme);
         for(let profile in userData.sMediaProfiles){
             $('.follower-stat-container').append($buildFollowerCard(userData,profile))
         }
+        //follower stat styling
+        followerStatStyling()
     })
 
