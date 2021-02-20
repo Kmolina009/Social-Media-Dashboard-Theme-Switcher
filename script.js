@@ -91,7 +91,7 @@ const userData ={
 //Theme Switch
 $themeSwitcher=$(".theme-switcher-container");
 //Switch btn/actuator
-$themeBtn=$('.theme-switcher-btn');
+$themeBtn=$('.theme-switch-btn');
 // Component construction
     $buildFollowerCard =function(user,platform){
         $followerGrowth = `${user.growthIndicator(user.sMediaProfiles[platform].followers.growth)}`;
@@ -110,16 +110,12 @@ $themeBtn=$('.theme-switcher-btn');
             "    </div>",
             "  <div class=\"daily-follower-stat\">",
             userData.growthComponent(this,userData,platform),
-            //TODO - Apply styling to adjacent elements to growth arrow(p tags)
-            //elements{color:red}
-            //elements{color:green}
-            console.log(this),
             "   </div>",
             " </div>",
             "</div>"
         ].join("\n"));
     }
-//Currently ICE BOXED
+//*********Currently ICE BOXED****************
 $buildLikeViewCard=function(user,platform){
     //retrieve certain stats
     // console.log(growthIndicator(user.sMediaProfiles.platform.likes.growth));
@@ -165,11 +161,15 @@ function changeTheme(){
         $themeStatus.text("Dark Mode");
         $(".light-theme").addClass("dark-theme");
         $(".dark-theme").removeClass("light-theme");
+        // $('.theme-switcher-btn').animate({left:"5"},"slow")
+        $themeBtn.animate({left:"5px"},"slow")
     }
     function assignLightTheme(){
         $themeStatus.text("Light Mode");
         $(".dark-theme").addClass("light-theme");
         $(".light-theme").removeClass("dark-theme");
+        // $('.theme-switcher-btn').animate({left:"30px"},"slow")
+        $themeBtn.animate({left:"30px"},"slow")
     }
     ($themeStatus.text()!=="Light Mode")?assignLightTheme():assignDarkTheme();
 }

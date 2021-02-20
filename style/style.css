@@ -345,16 +345,20 @@ main{
     width: 59px;
     border-radius: 14px;
     background-color:#49CD94;
-    /* vertical-align: middle; */
+    padding: 0px;
 }
 .theme-switch-btn{
+    display: inline-block;
     position: relative;
     height: 22px;
     width: 22px;
     border-radius: 50px;
     background-color:#343A4E;
-    top: 14%;
-    left: 8%;
+    /* top: 14%; */
+    top: 4px;
+    left: 5px;
+    /* left: 8%; */
+    margin-left:0px;
 }
 /************************************** Stat-Container *****************************************************/
 .stat-container{
