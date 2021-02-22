@@ -156,6 +156,12 @@ function changeTheme(){
     ($themeStatus.text()!=="Light Mode")?assignLightTheme():assignDarkTheme();
 }
 
+function mobileHeaderRule(){
+    $headerElementContainer = $('.header-content')
+    //create the hr element from within this function
+   $('header').width()<=326? $themeSwitcher.before('<hr>'):$('.header-content').remove('hr')
+}
+
 $(document).ready(function(){
     $themeStatus.text("Dark Mode");
     //display total follower count
@@ -165,7 +171,11 @@ $(document).ready(function(){
         for(let profile in userData.sMediaProfiles){
             $('.follower-stat-container').append($buildFollowerCard(userData,profile))
         }
-//         $('body').append($buildLikeViewCard(userData,"facebook"))
-//generate Like and follow stats
+        //    TODO have hr element added and removed based on media query
+    // console.log($('header').width())
+        mobileHeaderRule()
+        if($('header').width()<376){
+            mobileHeaderRule()
+        }
     })
 

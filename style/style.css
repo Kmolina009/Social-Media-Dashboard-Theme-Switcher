@@ -196,7 +196,7 @@ body.dark-theme{
     background-color: var(--Very-Dark-Blue-Top-BG-Pattern);    
 }
 
-.follower-card.dark-theme, .like-view.dark-theme{
+.follower-card.dark-theme, .like-view.dark-theme .header-backdrop.dark-theme.header-content hr{
     background-color: var(--Dark-Desaturated-Blue-Card-BG);
 }
 
@@ -273,6 +273,12 @@ header{
     right: -49px;
     top: 75px;
     
+}
+.header-content hr{
+    margin: 0px;
+    position: absolute;
+    top:45px;
+    width: 94%;
 }
 .headerliner{
    width: 400px;
