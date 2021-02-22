@@ -157,6 +157,7 @@ function changeTheme(){
 }
 
 $(document).ready(function(){
+    $themeStatus.text("Dark Mode");
     //display total follower count
     $('span.total-follower-qty').text(userData.getTotalFollowers());
     // Change theme

@@ -643,7 +643,7 @@ div.platform-username > a{
     .header-backdrop{
         display: flex;
         flex-direction: column;
-        height: 289px;
+        height: fit-content;
         width: 326px;
         position: absolute;
         left: 300px;
@@ -652,24 +652,25 @@ div.platform-username > a{
     
     .header-content{
         display: flex;
-        justify-content: space-between;
+        /* justify-content: space-between; */
+        flex-direction: column;
         width: 326px;
-        height: 289px;
+        height: 112px;
         position: relative;
         right: -49px;
         top: 75px;
         
     }
-    .headerliner{
+    .headliner{
         width: 326px;
-        height: 62px; 
+        height: 31px; 
     }
     .headliner h1{
-       font-size: 8px;
+       font-size: 16px;
        font-weight: 600; 
     }
     .headerliner h2{
-        font-size: 17px;
+        font-size: 8px;
     }
     .title-container{
         display: flex;
@@ -689,11 +690,13 @@ div.platform-username > a{
     /************************Theme Switcher Component********************************************************/
     .theme-switcher-container{
         position: absolute;
-        left:90%;
+        left:3%;
+        top: 55px;
         display: flex;
         flex-direction: row;
     }
     .theme-switcher-container p{
+        display: block;
         position: relative;
         top: 8px;
         right: 10px;
@@ -702,6 +705,8 @@ div.platform-username > a{
     /* Button Styling */
     .theme-switcher{
         display: block;
+        position: relative;
+        left: 166px;
         height: 31px;
         width: 59px;
         border-radius: 14px;
