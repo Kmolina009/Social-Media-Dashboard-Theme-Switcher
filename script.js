@@ -73,6 +73,7 @@ const userData ={
     }
         }
 //Functions
+// TODO - Find out why this function is not being called
 // growth styling
 let growthIndicator = function(growthStat){
     console.log(growthStat)
