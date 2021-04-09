@@ -140,7 +140,10 @@ $buildLikeViewCard=function(user,platform){
 
 // *******************************Change Theme Functions*******************************************
 let $themeStatus=$(".theme-switcher-container > p");
+let defaultTheme = "Dark Mode";
+$themeStatus.text(defaultTheme) 
 function changeTheme(){
+    $themeStatus.text();
     //explictly adding and removing classes
     function assignDarkTheme(){
         $themeStatus.text("Dark Mode");
