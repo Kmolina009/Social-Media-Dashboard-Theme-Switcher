@@ -53,7 +53,7 @@ table {
 }
 
 /* TODO, see if the reason icon does not display is due issues running into other icons */
-.attribution { font-size: 11px; text-align: center; position:relative; top:500px;}
+.attribution {font-size: 11px;text-align: center;position:relative;top: 0;}
 .attribution a { color: hsl(228, 45%, 44%); }
 .container{
     width: 1440;
@@ -214,10 +214,10 @@ body.dark-theme{
     background-color: var(--Very-Dark-Blue-BG);
 }
 .header-backdrop.dark-theme{
-    position: absolute; 
-    top:0px;
-    left:0px; 
-    background-color: var(--Very-Dark-Blue-Top-BG-Pattern);    
+    position: absolute;
+    top: 0px;
+    left:0px;
+    background-color: var(--Very-Dark-Blue-Top-BG-Pattern);
 }
 
 .follower-card.dark-theme, .like-view.dark-theme{
@@ -265,16 +265,14 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 1440px;
-    width: 150vw;
-    /* border: #343A4E 1px solid; */
+    height: 900px;
+    width: 100vw;
     font-family: 'Inter', sans-serif;
 }
 /************************Header Component********************************************************/
 header{
     position: absolute;
     left: 40px;
-    /* display: flex; */
     display: inline-block;
     flex-direction: row;
     justify-content: space-between;
@@ -283,7 +281,7 @@ header{
 }
 .header-backdrop{
     height: 289px;
-    width: 1440px;
+    width: 100vw;
     position: absolute;
     left: 300px;
 }
@@ -294,13 +292,13 @@ header{
     width: 1342px;
     height: 289px;
     position: relative;
-    right: -49px;
+    left: 50px;
+    /* right: -49px; */
     top: 75px;
-    
 }
 .headerliner{
-   width: 400px;
-   height: 62px; 
+    width: 400px;
+    height: 62px; 
 }
 .headliner h1{
    font-size: 32px;
@@ -319,11 +317,19 @@ header{
 }
 main{
 
-    /* top:0; */
-    display: flex;
-    flex-direction: column;
-    height: 728px;
-    width: 1342px;
+position: relative;
+
+top: 100px;
+
+display: flex;
+
+flex-direction: column;
+
+height: 728px;
+
+width: 1342px;
+
+margin: 0 auto;
 }
 /************************Theme Switcher Component********************************************************/
 .theme-switcher-container{
@@ -363,7 +369,7 @@ main{
 /************************************** Stat-Container *****************************************************/
 .stat-container{
     display: flex;
-    position: absolute;
+    /* position: absolute; */
     width: 1342px;
     height: 728px;
     flex-direction: column;
