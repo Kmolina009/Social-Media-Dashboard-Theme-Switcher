@@ -267,14 +267,12 @@ body{
     justify-content: center;
     height: 900px;
     width: 100vw;
-    /* border: #343A4E 1px solid; */
     font-family: 'Inter', sans-serif;
 }
 /************************Header Component********************************************************/
 header{
     position: absolute;
     left: 40px;
-    /* display: flex; */
     display: inline-block;
     flex-direction: row;
     justify-content: space-between;
@@ -294,13 +292,13 @@ header{
     width: 1342px;
     height: 289px;
     position: relative;
-    right: -49px;
+    left: 50px;
+    /* right: -49px; */
     top: 75px;
-    
 }
 .headerliner{
-   width: 400px;
-   height: 62px; 
+    width: 400px;
+    height: 62px; 
 }
 .headliner h1{
    font-size: 32px;
@@ -318,13 +316,20 @@ header{
    
 }
 main{
-position: relative;
-top: 100px;
-display: flex;
-flex-direction: column;
-height: 728px;
-width: 1342px;
-margin: 0 auto;
+
+position: relative;
+
+top: 100px;
+
+display: flex;
+
+flex-direction: column;
+
+height: 728px;
+
+width: 1342px;
+
+margin: 0 auto;
 }
 /************************Theme Switcher Component********************************************************/
 .theme-switcher-container{
