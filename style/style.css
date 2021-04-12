@@ -164,6 +164,8 @@ table {
     background-color: var(--YouTube);
 }
 .negative-growth{
+    position: relative;
+    top: 5px;
     display: block;
     width:15px;
     height:11px;
@@ -171,10 +173,32 @@ table {
     background-repeat: no-repeat;
 }
 .positive-growth{
+    position: relative;
+    top: 5px;
     display: block;
     width:15px;
-    height:11px;
+    height:5px;
     background-image: url(../images/icon-up.svg);
+    background-repeat: no-repeat;
+}
+.stat .positive-growth{
+    position: relative;
+    top: 10px;
+    right: 15px;
+    display: block;
+    width:15px;
+    height:5px;
+    background-image: url(../images/icon-up.svg);
+    background-repeat: no-repeat;
+}
+.stat .negative-growth{
+    position: relative;
+    top: 10px;
+    right: 15px;
+    display: block;
+    width:15px;
+    height:5px;
+    background-image: url(../images/icon-down.svg);
     background-repeat: no-repeat;
 }
 
@@ -321,16 +345,20 @@ main{
     width: 59px;
     border-radius: 14px;
     background-color:#49CD94;
-    /* vertical-align: middle; */
+    padding: 0px;
 }
 .theme-switch-btn{
+    display: inline-block;
     position: relative;
     height: 22px;
     width: 22px;
     border-radius: 50px;
     background-color:#343A4E;
-    top: 14%;
-    left: 8%;
+    /* top: 14%; */
+    top: 4px;
+    left: 5px;
+    /* left: 8%; */
+    margin-left:0px;
 }
 /************************************** Stat-Container *****************************************************/
 .stat-container{
@@ -341,6 +369,13 @@ main{
     flex-direction: column;
     top: 158px;
     left: 50px;
+}
+/*  */
+.negaGrowthIndicator{
+    color:var(--Bright-Red)
+}
+.posiGrowthIndicator{
+    color:var(--Lime-Green)
 }
 /************************Follower-Stat Components********************************************************/
 .follower-stat-container{
@@ -388,6 +423,18 @@ main{
 div.platform-username > a{
  
     text-decoration: none;
+}
+.daily-follower-stat{
+    /* position: absolute; */
+    position: relative;
+    top: 25px;
+    /* top: 100px; */
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    height: 19px;
+    flex-grow: inherit;
+    font-size: 10px;
 }
 /************************ Daily Like View Stat Components********************************************************/
 /* .daily-like-view-container and all of it's contents*/

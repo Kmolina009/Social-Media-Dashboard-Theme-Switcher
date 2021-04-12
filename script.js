@@ -70,44 +70,52 @@ const userData ={
             } ,
     tenThousandPlus:function(stat){
         return stat>9999? `${String(stat).substring(0, 2)}k`:stat;
-    }
-        }
-//Functions
-// growth styling
-let growthIndicator = function(growthStat){
-    console.log(growthStat)
-    // return growthStat>0?".positive-growth":".negative-growth";
-    // console.log("This function has beem called");
-};
-//JQuery function and components
-//Store theme-switcher
+    },
 
+    growthIndicator:function(growthStat){
+        return (growthStat>0)?"positive-growth":"negative-growth";
+    },
+    growthComponent:function(cardComponent,user,platform){
+        const userProfileGrowth=[
+    //call function to get the follower positive or negative growth
+    `           <figure class=${this.growthIndicator(user.sMediaProfiles[platform].views.growth)}></figure>`,
+    // get the quantity of follower growth
+    `           <p>${user.sMediaProfiles[platform].views.growth*100}%</p>`,
+    "           <p>Today</p>"
+    ].join("\n")
+    
+    return userProfileGrowth 
+    }
+}
+//JQuery function and components
 //Theme Switch
 $themeSwitcher=$(".theme-switcher-container");
 //Switch btn/actuator
-$themeBtn=$('.theme-switcher-btn');
+$themeBtn=$('.theme-switch-btn');
 // Component construction
     $buildFollowerCard =function(user,platform){
+        $followerGrowth = `${user.growthIndicator(user.sMediaProfiles[platform].followers.growth)}`;
         return $followerCard=$([
             "<div class=\"follower-card dark-theme\">",
-            `  <div class=\"card-top-decoration ${platform}-decoration\"></div>`,
-            "       <div class=\"platform-username\">",
-            `        <span class=\"sm-icon ${platform}-icon\"></span>`,
-            "         <a class=\"dark-theme\" href=\"http://\" target=\"_blank\" rel=\"noopener noreferrer\">@nathanf</a>",
-            "       </div>",
-            " <div class=\"follower-count\">",
-            "    <figure>",
-            `         <p class="follower-count">${userData.sMediaProfiles[platform].followers.qty}</p>`,
-            "         <p>Followers</p>",
-            "    <figure>",
+            `     <div class=\"card-top-decoration ${platform}-decoration\"></div>`,
+            "          <div class=\"platform-username\">",
+            `           <span class=\"sm-icon ${platform}-icon\"></span>`,
+            "            <a class=\"dark-theme\" href=\"http://\" target=\"_blank\" rel=\"noopener noreferrer\">@nathanf</a>",
+            "          </div>",
+            "    <div class=\"follower-count\">",
+            "       <figure>",
+            `            <p class="follower-count">${user.tenThousandPlus(user.sMediaProfiles[platform].followers.qty)}</p>`,
+            "            <p>Followers</p>",
+            "       <figure>",
+            "    </div>",
+            "  <div class=\"daily-follower-stat\">",
+            userData.growthComponent(this,userData,platform),
+            "   </div>",
             " </div>",
-            " </div>",
-            
-            
             "</div>"
         ].join("\n"));
     }
-//Currently ICE BOXED
+//*********Currently ICE BOXED****************
 $buildLikeViewCard=function(user,platform){
     //retrieve certain stats
     // console.log(growthIndicator(user.sMediaProfiles.platform.likes.growth));
@@ -130,6 +138,7 @@ $buildLikeViewCard=function(user,platform){
 `          <figure class=\"${platform}-icon\"></figure>`,
 "          <div class=\"stat\">",
 // conditional statement if 
+// `            <figure class=\".negative-growth\"></figure>`,
 `            <figure class=\".negative-growth\"></figure>`,
 `            <p>${user.sMediaProfiles[platform].likes.growth*100}</p>`,
 "          </div>",
@@ -138,6 +147,12 @@ $buildLikeViewCard=function(user,platform){
     ].join("\n"))
 }
 
+function followerStatStyling(){
+        $('.follower-stat-container').find(".daily-follower-stat ").find(".positive-growth ").parent().addClass("posiGrowthIndicator")
+        $('.follower-stat-container').find(".daily-follower-stat ").find(".negative-growth ").parent().addClass("negaGrowthIndicator") 
+        $('.stat').find(".positive-growth").next().addClass('posiGrowthIndicator')   
+        $('.stat').find(".negative-growth").next().addClass('negaGrowthIndicator')   
+    }  
 // *******************************Change Theme Functions*******************************************
 let $themeStatus=$(".theme-switcher-container > p");
 let defaultTheme = "Dark Mode";
@@ -149,11 +164,15 @@ function changeTheme(){
         $themeStatus.text("Dark Mode");
         $(".light-theme").addClass("dark-theme");
         $(".dark-theme").removeClass("light-theme");
+        // $('.theme-switcher-btn').animate({left:"5"},"slow")
+        $themeBtn.animate({left:"5px"},"slow")
     }
     function assignLightTheme(){
         $themeStatus.text("Light Mode");
         $(".dark-theme").addClass("light-theme");
         $(".light-theme").removeClass("dark-theme");
+        // $('.theme-switcher-btn').animate({left:"30px"},"slow")
+        $themeBtn.animate({left:"30px"},"slow")
     }
     ($themeStatus.text()!=="Light Mode")?assignLightTheme():assignDarkTheme();
 }
@@ -161,12 +180,13 @@ function changeTheme(){
 $(document).ready(function(){
     //display total follower count
     $('span.total-follower-qty').text(userData.getTotalFollowers());
+
     // Change theme
     $(".theme-switcher-container").on("click",changeTheme);
         for(let profile in userData.sMediaProfiles){
             $('.follower-stat-container').append($buildFollowerCard(userData,profile))
         }
-//         $('body').append($buildLikeViewCard(userData,"facebook"))
-//generate Like and follow stats
+        //follower stat styling
+        followerStatStyling()
     })
 
