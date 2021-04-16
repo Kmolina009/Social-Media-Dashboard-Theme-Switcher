@@ -435,6 +435,10 @@ margin: 0 auto;
     font-size: 16px;
     /* font-weight: lighter; */
 }
+.follower-count figure p:nth-child(2){
+    color: var(--Dark-Grayish-Blue-Text);
+    letter-spacing: 5px;
+}
 div.platform-username > a{
  
     text-decoration: none;
@@ -712,8 +716,6 @@ div.platform-username > a{
         width: 94%;
         border: 0px;
     }
-    /* --Desaturated-Blue-Text: hsl(228, 34%, 66%); */
-/* --White-Text: hsl(0, 0%, 100%); */
     .header-backdrop{
         display: flex;
         flex-direction: column;
@@ -726,7 +728,6 @@ div.platform-username > a{
     
     .header-content{
         display: flex;
-        /* justify-content: space-between; */
         flex-direction: column;
         width: 326px;
         height: 112px;
@@ -844,16 +845,25 @@ div.platform-username > a{
         position: relative;
         top: 52px;
     }
+
     .follower-count figure .follower-count{
-        font-size: 52px;
+        font-size: 70px;
         font-weight: 600;
     }
     .follower-count figure p{
         font-size: 16px;
-        /* font-weight: lighter; */
+    }
+    .follower-count figure p:nth-child(2){
+        
+        letter-spacing: 5px;
     }
     div.platform-username > a{
         text-decoration: none;
+    }
+    .daily-follower-stat{
+        position: absolute;
+        top: 220px;
+        font-size: 20px;
     }
     /************************ Daily Like View Stat Components********************************************************/
     /* .daily-like-view-container and all of it's contents*/
@@ -884,9 +894,7 @@ div.platform-username > a{
         justify-content: space-between;
         position: relative;
         bottom: 10px;
-        /* top: 100px; */
         margin-top:27px;
-        /* height: 152px; */
         height: 320px;
         width: 326px;
         border-radius: 10px;
