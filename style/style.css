@@ -88,6 +88,7 @@ table {
 --White-BG: hsl(0, 0%, 100%);
 --Very-Pale-Blue-Top-BG-Pattern: hsl(225, 100%, 98%);
 --Light-Grayish-Blue-Card-BG: hsl(227, 47%, 96%);
+--Light-Grayish-Blue-Card-Hover: hsl(232, 33%, 91%);
 --Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
 --Very-Dark-Blue-Text: hsl(230, 17%, 14%);
 
@@ -255,9 +256,11 @@ body.light-theme{
 .follower-card.light-theme, .like-view.light-theme{
     background-color: var(--Light-Grayish-Blue-Card-BG);
 }
-
+/* Get the right value for the color to change on hover */
 .follower-card.light-theme:hover,.like-view.light-theme:hover{
-    background-color: var(--Dark-Grayish-Blue-Text);
+    cursor: pointer;
+    /* background-color: var(--Light-Grayish-Blue-Card-BG); */
+    background-color: var(--Light-Grayish-Blue-Card-Hover);
 }
 .theme-switcher.light-theme{
     background-color: var(--light-Toggle);
@@ -290,6 +293,7 @@ header{
     width: 100vw;
     position: absolute;
     left: 300px;
+    margin: 0 auto;
 }
 
 .header-content{
@@ -298,16 +302,15 @@ header{
     width: 1342px;
     height: 289px;
     position: relative;
-    left: 50px;
-    /* right: -49px; */
     top: 75px;
+    margin: 0 auto;
 }
 .header-content hr{
     display: none;
 }
 .headerliner{
     width: 400px;
-    height: 62px; 
+    height: 62px;
 }
 .headliner h1{
    font-size: 32px;
@@ -390,7 +393,7 @@ margin: 0 auto;
     color:var(--Bright-Red)
 }
 .posiGrowthIndicator{
-    color:var(--Lime-Green)
+    color:var(--Lime-Green);
 }
 /************************Follower-Stat Components********************************************************/
 .follower-stat-container{
@@ -428,7 +431,7 @@ margin: 0 auto;
     top: 52px;
 }
 .follower-count figure .follower-count{
-    font-size: 52px;
+    font-size: 75px;
     font-weight: 600;
 }
 .follower-count figure p{
@@ -437,7 +440,8 @@ margin: 0 auto;
 }
 .follower-count figure p:nth-child(2){
     color: var(--Dark-Grayish-Blue-Text);
-    letter-spacing: 5px;
+    letter-spacing: 10px;
+    font-weight: 600;
 }
 div.platform-username > a{
  
@@ -446,8 +450,8 @@ div.platform-username > a{
 .daily-follower-stat{
     /* position: absolute; */
     position: relative;
-    top: 25px;
-    /* top: 100px; */
+    /* top: 25px; */
+    top: 85px;
     display: flex;
     flex-direction: row;
     width: fit-content;
@@ -492,6 +496,7 @@ div.platform-username > a{
 }
 /******************************************* Like-View-Card and it's Child Elements **********************************************/
 .like-view{
+    background-color: var(--Dark-Desaturated-Blue-Card-BG);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -500,6 +505,9 @@ div.platform-username > a{
     width: 305px;
     border-radius: 5px;
 }
+/* .like-view:hover{
+    background-color: var(--Dark-Desaturated-Blue-Card-BG);
+} */
 .l-v{
     display: block;
     position: relative;
@@ -652,6 +660,7 @@ div.platform-username > a{
     }
     
     .follower-card.dark-theme:hover,.like-view.dark-theme:hover{
+        cursor: pointer;
         background-color: var(--Desaturated-Blue-Text);
     }
     .theme-switcher.dark-theme{
