@@ -177,7 +177,14 @@ function changeTheme(){
     ($themeStatus.text()!=="Light Mode")?assignLightTheme():assignDarkTheme();
 }
 
+function mobileHeaderRule(){
+    $headerElementContainer = $('.header-content')
+    //create the hr element from within this function
+   $('header').width()<=326? $themeSwitcher.before('<hr>'):$('.header-content').remove('hr')
+}
+
 $(document).ready(function(){
+    $themeStatus.text("Dark Mode");
     //display total follower count
     $('span.total-follower-qty').text(userData.getTotalFollowers());
 
