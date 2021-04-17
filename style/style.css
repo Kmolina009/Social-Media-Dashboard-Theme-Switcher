@@ -88,6 +88,7 @@ table {
 --White-BG: hsl(0, 0%, 100%);
 --Very-Pale-Blue-Top-BG-Pattern: hsl(225, 100%, 98%);
 --Light-Grayish-Blue-Card-BG: hsl(227, 47%, 96%);
+--Light-Grayish-Blue-Card-Hover: hsl(232, 33%, 91%);
 --Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
 --Very-Dark-Blue-Text: hsl(230, 17%, 14%);
 
@@ -255,9 +256,11 @@ body.light-theme{
 .follower-card.light-theme, .like-view.light-theme{
     background-color: var(--Light-Grayish-Blue-Card-BG);
 }
-
+/* Get the right value for the color to change on hover */
 .follower-card.light-theme:hover,.like-view.light-theme:hover{
-    background-color: var(--Dark-Grayish-Blue-Text);
+    cursor: pointer;
+    /* background-color: var(--Light-Grayish-Blue-Card-BG); */
+    background-color: var(--Light-Grayish-Blue-Card-Hover);
 }
 .theme-switcher.light-theme{
     background-color: var(--light-Toggle);
@@ -290,6 +293,7 @@ header{
     width: 100vw;
     position: absolute;
     left: 300px;
+    margin: 0 auto;
 }
 
 .header-content{
@@ -298,16 +302,15 @@ header{
     width: 1342px;
     height: 289px;
     position: relative;
-    left: 50px;
-    /* right: -49px; */
     top: 75px;
+    margin: 0 auto;
 }
 .header-content hr{
     display: none;
 }
 .headerliner{
     width: 400px;
-    height: 62px; 
+    height: 62px;
 }
 .headliner h1{
    font-size: 32px;
@@ -390,7 +393,7 @@ margin: 0 auto;
     color:var(--Bright-Red)
 }
 .posiGrowthIndicator{
-    color:var(--Lime-Green)
+    color:var(--Lime-Green);
 }
 /************************Follower-Stat Components********************************************************/
 .follower-stat-container{
@@ -428,12 +431,17 @@ margin: 0 auto;
     top: 52px;
 }
 .follower-count figure .follower-count{
-    font-size: 52px;
+    font-size: 75px;
     font-weight: 600;
 }
 .follower-count figure p{
     font-size: 16px;
     /* font-weight: lighter; */
+}
+.follower-count figure p:nth-child(2){
+    color: var(--Dark-Grayish-Blue-Text);
+    letter-spacing: 10px;
+    font-weight: 600;
 }
 div.platform-username > a{
  
@@ -442,8 +450,8 @@ div.platform-username > a{
 .daily-follower-stat{
     /* position: absolute; */
     position: relative;
-    top: 25px;
-    /* top: 100px; */
+    /* top: 25px; */
+    top: 85px;
     display: flex;
     flex-direction: row;
     width: fit-content;
@@ -488,6 +496,7 @@ div.platform-username > a{
 }
 /******************************************* Like-View-Card and it's Child Elements **********************************************/
 .like-view{
+    background-color: var(--Dark-Desaturated-Blue-Card-BG);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -496,6 +505,9 @@ div.platform-username > a{
     width: 305px;
     border-radius: 5px;
 }
+/* .like-view:hover{
+    background-color: var(--Dark-Desaturated-Blue-Card-BG);
+} */
 .l-v{
     display: block;
     position: relative;
@@ -635,10 +647,10 @@ div.platform-username > a{
         background-color: var(--Very-Dark-Blue-BG);
     }
     .header-backdrop.dark-theme{
-        position: absolute; 
-        top:0px;
-        left:0px; 
-        background-color: var(--Very-Dark-Blue-Top-BG-Pattern);    
+        position: absolute;
+        /* top: -32px; */
+        left:0px;
+        background-color: var(--Very-Dark-Blue-Top-BG-Pattern);
     }
     .header-content hr{
         border-top: 1px solid var(--Desaturated-Blue-Text);
@@ -648,6 +660,7 @@ div.platform-username > a{
     }
     
     .follower-card.dark-theme:hover,.like-view.dark-theme:hover{
+        cursor: pointer;
         background-color: var(--Desaturated-Blue-Text);
     }
     .theme-switcher.dark-theme{
@@ -711,40 +724,42 @@ div.platform-username > a{
         top: 46px;
         width: 94%;
         border: 0px;
+        margin: 20px 0%;
     }
-    /* --Desaturated-Blue-Text: hsl(228, 34%, 66%); */
-/* --White-Text: hsl(0, 0%, 100%); */
     .header-backdrop{
+        position: absolute;
+        /* top: -32px; */
+        top: -64px;
         display: flex;
         flex-direction: column;
         height: fit-content;
-        width: 326px;
-        position: absolute;
-        left: 300px;
+        width: 125vw;
+        /* top: -32px; */
 
     }
     
     .header-content{
         display: flex;
-        /* justify-content: space-between; */
         flex-direction: column;
         width: 326px;
         height: 112px;
         position: relative;
-        right: -49px;
-        top: 75px;
-        
+        /* right: -49px; */
+        top: 35px;
     }
     .headliner{
         width: 326px;
         height: 31px; 
     }
     .headliner h1{
-       font-size: 16px;
+       font-size: 25px;
        font-weight: 600; 
+       margin-bottom: 7px;
     }
     .headerliner h2{
         font-size: 8px;
+        margin-top: 2px;
+        margin-bottom: 10px;
     }
     .title-container{
         display: flex;
@@ -753,19 +768,18 @@ div.platform-username > a{
         width: 326px;
     }
     main{
-    
-        /* top:0; */
+        position: absolute;
+        top: 0px;
         display: flex;
         flex-direction: column;
         flex:  1 1 auto;
-        /* height: fit-content; */
         width: 326px;
     }
     /************************Theme Switcher Component********************************************************/
     .theme-switcher-container{
         position: absolute;
         left:3%;
-        top: 55px;
+        top: 80px;
         display: flex;
         flex-direction: row;
     }
@@ -844,16 +858,25 @@ div.platform-username > a{
         position: relative;
         top: 52px;
     }
+
     .follower-count figure .follower-count{
-        font-size: 52px;
+        font-size: 70px;
         font-weight: 600;
     }
     .follower-count figure p{
         font-size: 16px;
-        /* font-weight: lighter; */
+    }
+    .follower-count figure p:nth-child(2){
+        
+        letter-spacing: 5px;
     }
     div.platform-username > a{
         text-decoration: none;
+    }
+    .daily-follower-stat{
+        position: absolute;
+        top: 220px;
+        font-size: 20px;
     }
     /************************ Daily Like View Stat Components********************************************************/
     /* .daily-like-view-container and all of it's contents*/
@@ -884,9 +907,7 @@ div.platform-username > a{
         justify-content: space-between;
         position: relative;
         bottom: 10px;
-        /* top: 100px; */
         margin-top:27px;
-        /* height: 152px; */
         height: 320px;
         width: 326px;
         border-radius: 10px;
