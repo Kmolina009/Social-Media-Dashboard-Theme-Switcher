@@ -9,7 +9,7 @@ const userData ={
             views:{
                 qty:87,
                 growth:0.03,
-                viewTerm:"pageView"
+                viewTerm:"Page Views"
             },
             likes:{
                 qty:57,
@@ -24,7 +24,7 @@ const userData ={
             views:{
                 qty:117,
                 growth:3.03,
-                viewTerm:"retweets"
+                viewTerm:"Retweets"
             },
             likes:{
                 qty:507,
@@ -39,7 +39,7 @@ const userData ={
             views:{
                 qty:52000,
                 growth:13.75,
-                viewTerm:"profileViews"
+                viewTerm:"Profile Views"
             },
             likes:{
                 qty:5462,
@@ -54,7 +54,7 @@ const userData ={
             views:{
                 qty:1407,
                 growth:-12,
-                viewTerm:"totalViews"
+                viewTerm:"Total Views"
             },
             likes:{
                 qty:107,
@@ -116,35 +116,35 @@ $themeBtn=$('.theme-switch-btn');
         ].join("\n"));
     }
 //*********Currently ICE BOXED****************
+
 $buildLikeViewCard=function(user,platform){
-    //retrieve certain stats
-    // console.log(growthIndicator(user.sMediaProfiles.platform.likes.growth));
     return $likeViewCard=$([
-        "<h1>TESTING</h1>",
-"        <div class=\"daily-like-view-container\">",
-"        <div class=\"like-view\">",
-`          <p>${user.sMediaProfiles[platform].views.viewTerm}</p>`,
-`          <p>${user.sMediaProfiles[platform].views.qty}</p>`,
-`          <figure class=\"${platform}-icon\"></figure>`,
+        // "<h1>TESTING</h1>",
+"        <div class=\"daily-like-view-cards\">",
+// Views Card
+"        <div class=\"like-view dark-theme\">",
+`          <p class="l-v">${user.sMediaProfiles[platform].views.viewTerm}</p>`,
+`          <figure class=\"s-media-icon ${platform}-icon\"></figure>`,
+`          <p class="l-v-qty">${user.sMediaProfiles[platform].views.qty}</p>`,
 "          <div class=\"stat\">",
 // conditional statement
-`            <figure class=\".positive-growth\"></figure>`,
+`            <figure class=\"${user.growthIndicator(user.sMediaProfiles[platform].views.growth*100)}\"></figure>`,
 `            <p>${user.sMediaProfiles[platform].views.growth*100}%</p>`,
 "          </div>",
 "        </div>",
-"        <div class=\"like-view\">  ",
-"          <p> Likes</p>",
-`          <p>${user.sMediaProfiles[platform].likes.qty}</p>`,
-`          <figure class=\"${platform}-icon\"></figure>`,
+// Likes Card
+"        <div class=\"like-view dark-theme\">  ",
+"          <p class=\"l-v\"> Likes</p>",
+`          <figure class=\"s-media-icon ${platform}-icon\"></figure>`,
+`          <p class=\"l-v-qty\">${user.sMediaProfiles[platform].likes.qty}</p>`,
 "          <div class=\"stat\">",
-// conditional statement if 
-// `            <figure class=\".negative-growth\"></figure>`,
-`            <figure class=\".negative-growth\"></figure>`,
-`            <p>${user.sMediaProfiles[platform].likes.growth*100}</p>`,
+`            <figure class=\"${user.growthIndicator(user.sMediaProfiles[platform].likes.growth*100)}\"></figure>`,
+`            <p>${user.sMediaProfiles[platform].likes.growth*100}%</p>`,
 "          </div>",
 "        </div>",
 "      </div>"
-    ].join("\n"))
+    ].join("\n")    )
+    // console.log($likeViewCard)
 }
 
 function followerStatStyling(){
@@ -177,11 +177,11 @@ function changeTheme(){
     ($themeStatus.text()!=="Light Mode")?assignLightTheme():assignDarkTheme();
 }
 
-function mobileHeaderRule(){
-    $headerElementContainer = $('.header-content')
-    //create the hr element from within this function
-   $('header').width()<=326? $themeSwitcher.before('<hr>'):$('.header-content').remove('hr')
-}
+// function mobileHeaderRule(){
+//     $headerElementContainer = $('.header-content')
+//     //create the hr element from within this function
+//    $('header').width()<=326? $themeSwitcher.before('<hr>'):$('.header-content').remove('hr')
+// }
 
 $(document).ready(function(){
     $themeStatus.text("Dark Mode");
@@ -192,6 +192,7 @@ $(document).ready(function(){
     $(".theme-switcher-container").on("click",changeTheme);
         for(let profile in userData.sMediaProfiles){
             $('.follower-stat-container').append($buildFollowerCard(userData,profile))
+            $('.daily-like-deck').append($buildLikeViewCard(userData,profile))
         }
         //follower stat styling
         followerStatStyling()
