@@ -128,7 +128,7 @@ $buildLikeViewCard=function(user,platform){
 `          <p class="l-v-qty">${user.sMediaProfiles[platform].views.qty}</p>`,
 "          <div class=\"stat\">",
 // conditional statement
-`            <figure class=\".${user.growthIndicator(user.sMediaProfiles[platform].views.growth*100)}\"></figure>`,
+`            <figure class=\"${user.growthIndicator(user.sMediaProfiles[platform].views.growth*100)}\"></figure>`,
 `            <p>${user.sMediaProfiles[platform].views.growth*100}%</p>`,
 "          </div>",
 "        </div>",
@@ -138,7 +138,7 @@ $buildLikeViewCard=function(user,platform){
 `          <figure class=\"s-media-icon ${platform}-icon\"></figure>`,
 `          <p class=\"l-v-qty\">${user.sMediaProfiles[platform].likes.qty}</p>`,
 "          <div class=\"stat\">",
-`            <figure class=\".${user.growthIndicator(user.sMediaProfiles[platform].likes.growth*100)}\"></figure>`,
+`            <figure class=\"${user.growthIndicator(user.sMediaProfiles[platform].likes.growth*100)}\"></figure>`,
 `            <p>${user.sMediaProfiles[platform].likes.growth*100}%</p>`,
 "          </div>",
 "        </div>",
