@@ -1,208 +1,292 @@
 /* Imported Font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 /* Color Variables */
-
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* TODO, see if the reason icon does not display is due issues running into other icons */
-.attribution {font-size: 11px;text-align: center;position:relative;top: 0;}
-.attribution a { color: hsl(228, 45%, 44%); }
-.container{
-    width: 1440;
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: relative;
+  top: 24px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+.container {
+  width: 1440;
 }
 /* CSS Variable */
-:root{
-/* Primary Colors*/
---Lime-Green: hsl(163, 72%, 41%);
---Bright-Red: hsl(356, 69%, 56%);
-/* colors for Followe Card */
---Facebook: hsl(208, 92%, 53%);
---Twitter: hsl(203, 89%, 53%);
---Instagram1:hsl(37, 97%, 70%);
---Instagram2:hsl(329, 70%, 58%);
---YouTube: hsl(348, 97%, 39%);
+:root {
+  /* Primary Colors*/
+  --Lime-Green: hsl(163, 72%, 41%);
+  --Bright-Red: hsl(356, 69%, 56%);
+  /* colors for Followe Card */
+  --Facebook: hsl(208, 92%, 53%);
+  --Twitter: hsl(203, 89%, 53%);
+  --Instagram1: hsl(37, 97%, 70%);
+  --Instagram2: hsl(329, 70%, 58%);
+  --YouTube: hsl(348, 97%, 39%);
 
+  /* Dark Mode Colors */
 
-/* Dark Mode Colors */
+  --Very-Dark-Blue-BG: hsl(230, 17%, 14%);
+  --Very-Dark-Blue-Top-BG-Pattern: hsl(232, 19%, 15%);
+  --Dark-Desaturated-Blue-Card-BG: hsl(228, 28%, 20%);
+  --Desaturated-Blue-Text: hsl(228, 34%, 66%);
+  --White-Text: hsl(0, 0%, 100%);
 
---Very-Dark-Blue-BG: hsl(230, 17%, 14%);
---Very-Dark-Blue-Top-BG-Pattern: hsl(232, 19%, 15%);
---Dark-Desaturated-Blue-Card-BG: hsl(228, 28%, 20%);
---Desaturated-Blue-Text: hsl(228, 34%, 66%);
---White-Text: hsl(0, 0%, 100%);
+  /* Dark Theme for toggle*/
+  /* --dark-Toggle-color1: 210, 78%, 56%; */
+  --dark-Toggle-color1: hsl(210, 78%, 56%);
+  --dark-Toggle-color2: hsl(146, 68%, 55%);
 
-/* Dark Theme for toggle*/
-/* --dark-Toggle-color1: 210, 78%, 56%; */
---dark-Toggle-color1: hsl(210, 78%, 56%);
---dark-Toggle-color2: hsl(146, 68%, 55%);
+  /* Light Mode Colors */
+  --White-BG: hsl(0, 0%, 100%);
+  --Very-Pale-Blue-Top-BG-Pattern: hsl(225, 100%, 98%);
+  --Light-Grayish-Blue-Card-BG: hsl(227, 47%, 96%);
+  --Light-Grayish-Blue-Card-Hover: hsl(232, 33%, 91%);
+  --Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
+  --Very-Dark-Blue-Text: hsl(230, 17%, 14%);
 
-/* Light Mode Colors */
---White-BG: hsl(0, 0%, 100%);
---Very-Pale-Blue-Top-BG-Pattern: hsl(225, 100%, 98%);
---Light-Grayish-Blue-Card-BG: hsl(227, 47%, 96%);
---Light-Grayish-Blue-Card-Hover: hsl(232, 33%, 91%);
---Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
---Very-Dark-Blue-Text: hsl(230, 17%, 14%);
-
-/* Light Theme for toggle*/
---light-Toggle: hsl(230, 22%, 74%);
-
+  /* Light Theme for toggle*/
+  --light-Toggle: hsl(230, 22%, 74%);
 }
 
-.follower-count figure{
-    display: block;
-    height: 100px;
-    width: 100px;
+.follower-count figure {
+  display: block;
+  height: 100px;
+  width: 100px;
 }
-.sm-icon{
-    position: relative;
-    right: 10px;
+.sm-icon {
+  position: relative;
+  right: 10px;
 }
 /* Note - Refactor so social media profile icons are dynamically retrieved */
 
 /* Facebook card styling */
-.facebook-icon{
-    display: block;
-    height: 20px;
-    width: 20px;
-    background-image:url(../images/icon-facebook.svg);
-    background-repeat: no-repeat;
+.facebook-icon {
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-image: url(../images/icon-facebook.svg);
+  background-repeat: no-repeat;
 }
-.facebook-decoration{
-    display: block;
-    height: 10px;
-    width: 100%;
-    background-color: var(--Facebook);
+.facebook-decoration {
+  display: block;
+  height: 10px;
+  width: 100%;
+  background-color: var(--Facebook);
 }
 /* Instagram card styling */
-.instagram-icon{
-    display: block;
-    height: 20px;
-    width: 20px;
-    background-image:url(../images/icon-instagram.svg);
-    background-repeat: no-repeat;
+.instagram-icon {
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-image: url(../images/icon-instagram.svg);
+  background-repeat: no-repeat;
 }
-.instagram-decoration{
-    display: block;
-    height: 10px;
-    width: 100%;
-    background: linear-gradient(0.25turn,var(--Instagram1),var(--Instagram2));
+.instagram-decoration {
+  display: block;
+  height: 10px;
+  width: 100%;
+  background: linear-gradient(0.25turn, var(--Instagram1), var(--Instagram2));
 }
 /* Twitter card styling */
-.twitter-icon{
-    display: block;
-    height: 20px;
-    width: 20px;
-    background-image:url(../images/icon-twitter.svg);
-    background-repeat: no-repeat;
+.twitter-icon {
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-image: url(../images/icon-twitter.svg);
+  background-repeat: no-repeat;
 }
-.twitter-decoration{
-    display: block;
-    height: 10px;
-    width: 100%;
-    background-color: var(--Twitter);
+.twitter-decoration {
+  display: block;
+  height: 10px;
+  width: 100%;
+  background-color: var(--Twitter);
 }
 /* Youtubes Card Styling */
-.youtube-icon{
-    display: block;
-    height: 20px;
-    width: 20px;
-    background-image:url(../images/icon-youtube.svg);
-    background-repeat: no-repeat;
+.youtube-icon {
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-image: url(../images/icon-youtube.svg);
+  background-repeat: no-repeat;
 }
-.youtube-decoration{
-    display: block;
-    height: 10px;
-    width: 100%;
-    background-color: var(--YouTube);
+.youtube-decoration {
+  display: block;
+  height: 10px;
+  width: 100%;
+  background-color: var(--YouTube);
 }
-.negative-growth{
-    position: relative;
-    top: 5px;
-    display: block;
-    width:15px;
-    height:11px;
-    background-image: url(../images/icon-down.svg);
-    background-repeat: no-repeat;
+.negative-growth {
+  position: relative;
+  top: 5px;
+  display: block;
+  width: 15px;
+  height: 11px;
+  background-image: url(../images/icon-down.svg);
+  background-repeat: no-repeat;
 }
-.positive-growth{
-    position: relative;
-    top: 5px;
-    display: block;
-    width:15px;
-    height:5px;
-    background-image: url(../images/icon-up.svg);
-    background-repeat: no-repeat;
+.positive-growth {
+  position: relative;
+  top: 5px;
+  display: block;
+  width: 15px;
+  height: 5px;
+  background-image: url(../images/icon-up.svg);
+  background-repeat: no-repeat;
 }
-.stat .positive-growth{
-    position: relative;
-    top: 10px;
-    right: 15px;
-    display: block;
-    width:15px;
-    height:5px;
-    background-image: url(../images/icon-up.svg);
-    background-repeat: no-repeat;
+.stat .positive-growth {
+  position: relative;
+  top: 10px;
+  right: 15px;
+  display: block;
+  width: 15px;
+  height: 5px;
+  background-image: url(../images/icon-up.svg);
+  background-repeat: no-repeat;
 }
-.stat .negative-growth{
-    position: relative;
-    top: 10px;
-    right: 15px;
-    display: block;
-    width:15px;
-    height:5px;
-    background-image: url(../images/icon-down.svg);
-    background-repeat: no-repeat;
+.stat .negative-growth {
+  position: relative;
+  top: 10px;
+  right: 15px;
+  display: block;
+  width: 15px;
+  height: 5px;
+  background-image: url(../images/icon-down.svg);
+  background-repeat: no-repeat;
 }
-
 
 /* organize elements */
 /* - Mobile: 375px
@@ -211,199 +295,660 @@ table {
 /****************************************Theme Switcher Styling******************************************************************/
 
 /************************Dark Theme Components********************************************************/
-body.dark-theme{
-    background-color: var(--Very-Dark-Blue-BG);
+body.dark-theme {
+  background-color: var(--Very-Dark-Blue-BG);
 }
-.header-backdrop.dark-theme{
-    position: absolute;
-    top: 0px;
-    left:0px;
-    background-color: var(--Very-Dark-Blue-Top-BG-Pattern);
+.header-backdrop.dark-theme {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: var(--Very-Dark-Blue-Top-BG-Pattern);
 }
-.header-content hr.dark-theme{
-    border-top: 1px solid var(--Desaturated-Blue-Text);
-}
-
-.follower-card.dark-theme, .like-view.dark-theme .header-backdrop.dark-theme.header-content hr{
-    background-color: var(--Dark-Desaturated-Blue-Card-BG);
+.header-content hr.dark-theme {
+  border-top: 1px solid var(--Desaturated-Blue-Text);
 }
 
-.follower-card.dark-theme:hover,.like-view.dark-theme:hover{
-    background-color: var(--Desaturated-Blue-Text);
+.follower-card.dark-theme,
+.like-view.dark-theme .header-backdrop.dark-theme.header-content hr {
+  background-color: var(--Dark-Desaturated-Blue-Card-BG);
 }
-.theme-switcher.dark-theme{
-    background-color: linear-gradient(0.25turn,--dark-Toggle-color1,--dark-Toggle-color2)
+
+.follower-card.dark-theme:hover,
+.like-view.dark-theme:hover {
+  background-color: var(--Desaturated-Blue-Text);
+}
+.theme-switcher.dark-theme {
+  background-color: linear-gradient(
+    0.25turn,
+    --dark-Toggle-color1,
+    --dark-Toggle-color2
+  );
 }
 /* Dark mode Text Styling*/
-.follower-card.dark-theme, .daily-like-view-container h1,.like-view.dark-theme,.header-backdrop.dark-theme,div.platform-username > a.dark-theme{
-    color:var(--White-Text); 
+.follower-card.dark-theme,
+.daily-like-view-container h1,
+.like-view.dark-theme,
+.header-backdrop.dark-theme,
+div.platform-username > a.dark-theme {
+  color: var(--White-Text);
 }
 /************************Light Theme Components********************************************************/
 
-body.light-theme{
-    background-color: var(--White-BG);
+body.light-theme {
+  background-color: var(--White-BG);
 }
-.header-backdrop.light-theme{
-    position: absolute; 
-    top:0px;
-    left:0px; 
-    background-color: var(--Very-Pale-Blue-Top-BG-Pattern);    
+.header-backdrop.light-theme {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: var(--Very-Pale-Blue-Top-BG-Pattern);
 }
-.header-content hr.light-theme{
-    border-top: 1px solid var(--Dark-Grayish-Blue-Text);
+.header-content hr.light-theme {
+  border-top: 1px solid var(--Dark-Grayish-Blue-Text);
 }
 
-.follower-card.light-theme, .like-view.light-theme{
-    background-color: var(--Light-Grayish-Blue-Card-BG);
+.follower-card.light-theme,
+.like-view.light-theme {
+  background-color: var(--Light-Grayish-Blue-Card-BG);
 }
 /* Get the right value for the color to change on hover */
-.follower-card.light-theme:hover,.like-view.light-theme:hover{
-    cursor: pointer;
-    /* background-color: var(--Light-Grayish-Blue-Card-BG); */
-    background-color: var(--Light-Grayish-Blue-Card-Hover);
+.follower-card.light-theme:hover,
+.like-view.light-theme:hover {
+  cursor: pointer;
+  /* background-color: var(--Light-Grayish-Blue-Card-BG); */
+  background-color: var(--Light-Grayish-Blue-Card-Hover);
 }
-.theme-switcher.light-theme{
-    background-color: var(--light-Toggle);
+.theme-switcher.light-theme {
+  background-color: var(--light-Toggle);
 }
 /* Ligth Theme Text Styling */
-.follower-card.light-theme, .daily-like-view-container h1,.like-view.light-theme,.header-backdrop.light-theme,div.platform-username > a.light-theme{
-    color:var(--Very-Dark-Blue-Text); 
+.follower-card.light-theme,
+.daily-like-view-container h1,
+.like-view.light-theme,
+.header-backdrop.light-theme,
+div.platform-username > a.light-theme {
+  color: var(--Very-Dark-Blue-Text);
 }
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-body{
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 900px;
+  width: 100vw;
+  font-family: "Inter", sans-serif;
+}
+/************************Header Component********************************************************/
+header {
+  position: absolute;
+  left: 40px;
+  display: inline-block;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 75px;
+  width: 1440px;
+}
+.header-backdrop {
+  height: 289px;
+  width: 100vw;
+  position: absolute;
+  left: 300px;
+  margin: 0 auto;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  width: 1342px;
+  height: 289px;
+  position: relative;
+  top: 75px;
+  margin: 0 auto;
+}
+.header-content hr {
+  display: none;
+}
+.headerliner {
+  width: 400px;
+  height: 62px;
+}
+.headliner h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+.headerliner h2 {
+  font-size: 17px;
+}
+.title-container {
+  display: flex;
+  flex-direction: column;
+  height: 62px;
+  width: 400px;
+}
+main {
+  position: relative;
+
+  top: 100px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  height: 728px;
+
+  width: 1342px;
+
+  margin: 0 auto;
+}
+
+/************************Footer Styling********************************************************/
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+/************************Theme Switcher Component********************************************************/
+.theme-switcher-container {
+  position: absolute;
+  left: 90%;
+  display: flex;
+  flex-direction: row;
+}
+.theme-switcher-container p {
+  position: relative;
+  top: 8px;
+  right: 10px;
+  font-size: 14px;
+}
+/* Button Styling */
+.theme-switcher {
+  display: block;
+  height: 31px;
+  width: 59px;
+  border-radius: 14px;
+  background-color: #49cd94;
+  padding: 0px;
+}
+.theme-switch-btn {
+  display: inline-block;
+  position: relative;
+  height: 22px;
+  width: 22px;
+  border-radius: 50px;
+  background-color: #343a4e;
+  /* top: 14%; */
+  top: 4px;
+  left: 5px;
+  /* left: 8%; */
+  margin-left: 0px;
+}
+/************************************** Stat-Container *****************************************************/
+.stat-container {
+  display: flex;
+  /* position: absolute; */
+  width: 1342px;
+  height: 728px;
+  flex-direction: column;
+  top: 158px;
+  left: 50px;
+}
+/*  */
+.negaGrowthIndicator {
+  color: var(--Bright-Red);
+}
+.posiGrowthIndicator {
+  color: var(--Lime-Green);
+}
+/************************Follower-Stat Components********************************************************/
+.follower-stat-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 275px;
+  width: 1342px;
+}
+.follower-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 262px;
+  width: 309px;
+  border-radius: 7px;
+  overflow: hidden;
+}
+.platform-username {
+  display: flex;
+  flex-direction: row;
+  height: 22px;
+  /* width:89px; */
+  position: relative;
+  top: 37px;
+  font-size: 16px;
+  /* color:white */
+}
+.follower-count figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  top: 52px;
+}
+.follower-count figure .follower-count {
+  font-size: 75px;
+  font-weight: 600;
+}
+.follower-count figure p {
+  font-size: 16px;
+  /* font-weight: lighter; */
+}
+.follower-count figure p:nth-child(2) {
+  color: var(--Dark-Grayish-Blue-Text);
+  letter-spacing: 10px;
+  font-weight: 600;
+}
+div.platform-username > a {
+  text-decoration: none;
+}
+.daily-follower-stat {
+  /* position: absolute; */
+  position: relative;
+  /* top: 25px; */
+  top: 85px;
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: 19px;
+  flex-grow: inherit;
+  font-size: 10px;
+}
+/************************ Daily Like View Stat Components********************************************************/
+/* .daily-like-view-container and all of it's contents*/
+.daily-like-view-container {
+  display: flex;
+  flex-direction: column;
+  height: 404px;
+  width: 1342px;
+}
+.daily-like-view-container h1 {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  width: fit-content;
+}
+.daily-like-deck {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 404px;
+  width: 1342px;
+}
+.daily-like-view-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  bottom: 10px;
+  /* top: 100px; */
+  margin-top: 27px;
+  height: 152px;
+  width: 652px;
+  border-radius: 10px;
+}
+/******************************************* Like-View-Card and it's Child Elements **********************************************/
+.like-view {
+  background-color: var(--Dark-Desaturated-Blue-Card-BG);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 150px;
+  width: 305px;
+  border-radius: 5px;
+}
+/* .like-view:hover{
+    background-color: var(--Dark-Desaturated-Blue-Card-BG);
+} */
+.l-v {
+  display: block;
+  position: relative;
+  top: 22px;
+  left: 29px;
+  height: 75px;
+  width: 151px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.like-view .s-media-icon {
+  height: 75px;
+  width: 151px;
+  position: relative;
+  top: 25px;
+  left: 80px;
+}
+.l-v-qty {
+  height: 75px;
+  width: 151px;
+  position: relative;
+  top: 5px;
+  left: 29px;
+  font-size: 30px;
+  font-weight: 600;
+}
+.like-view .stat {
+  height: 75px;
+  width: 151px;
+  position: relative;
+  top: 18px;
+  left: 80px;
+  font-size: 15px;
+  background-image: url(images/icon-up.svg);
+}
+
+/* Mobile Media Query */
+/* .25 */
+/* TODO show/hide hr element for  */
+@media all and (max-width: 376px) {
+  .attribution {
+    display: flex;
+    font-size: 11px;
+    text-align: center;
+    position: relative;
+    top: 2870px;
+    position: absolute;
+    bottom: 0;
+    left: 13%;
+    height: 5%;
+  }
+  .follower-count figure {
+    display: block;
+    height: 20px;
+    width: 20px;
+  }
+  .sm-icon {
+    position: relative;
+    right: 10px;
+  }
+  /* Note - Refactor so social media profile icons are dynamically retrieved */
+
+  /* Facebook card styling */
+  .facebook-icon {
+    display: block;
+    height: 20px;
+    width: 20px;
+    background-image: url(../images/icon-facebook.svg);
+    background-repeat: no-repeat;
+  }
+  .facebook-decoration {
+    display: block;
+    height: 10px;
+    width: 100%;
+    background-color: var(--Facebook);
+  }
+  /* Instagram card styling */
+  .instagram-icon {
+    display: block;
+    height: 20px;
+    width: 20px;
+    background-image: url(../images/icon-instagram.svg);
+    background-repeat: no-repeat;
+  }
+  .instagram-decoration {
+    display: block;
+    height: 10px;
+    width: 100%;
+    background: linear-gradient(0.25turn, var(--Instagram1), var(--Instagram2));
+  }
+  /* Twitter card styling */
+  .twitter-icon {
+    display: block;
+    height: 20px;
+    width: 20px;
+    background-image: url(../images/icon-twitter.svg);
+    background-repeat: no-repeat;
+  }
+  .twitter-decoration {
+    display: block;
+    height: 10px;
+    width: 100%;
+    background-color: var(--Twitter);
+  }
+  /* Youtubes Card Styling */
+  .youtube-icon {
+    display: block;
+    height: 20px;
+    width: 20px;
+    background-image: url(../images/icon-youtube.svg);
+    background-repeat: no-repeat;
+  }
+  .youtube-decoration {
+    display: block;
+    height: 10px;
+    width: 100%;
+    background-color: var(--YouTube);
+  }
+  .negative-growth {
+    display: block;
+    width: 15px;
+    height: 11px;
+    background-image: url(../images/icon-down.svg);
+    background-repeat: no-repeat;
+  }
+  .positive-growth {
+    display: block;
+    width: 15px;
+    height: 11px;
+    background-image: url(../images/icon-up.svg);
+    background-repeat: no-repeat;
+  }
+
+  /****************************************Theme Switcher Styling******************************************************************/
+
+  /************************Dark Theme Components********************************************************/
+  body.dark-theme {
+    background-color: var(--Very-Dark-Blue-BG);
+  }
+  .header-backdrop.dark-theme {
+    position: absolute;
+    /* top: -32px; */
+    left: 0px;
+    background-color: var(--Very-Dark-Blue-Top-BG-Pattern);
+  }
+  .header-content hr {
+    border-top: 1px solid var(--Desaturated-Blue-Text);
+  }
+  .follower-card.dark-theme,
+  .like-view.dark-theme {
+    background-color: var(--Dark-Desaturated-Blue-Card-BG);
+  }
+
+  .follower-card.dark-theme:hover,
+  .like-view.dark-theme:hover {
+    cursor: pointer;
+    background-color: var(--Desaturated-Blue-Text);
+  }
+  .theme-switcher.dark-theme {
+    background-color: linear-gradient(
+      0.25turn,
+      --dark-Toggle-color1,
+      --dark-Toggle-color2
+    );
+  }
+  /* Dark mode Text Styling*/
+  .follower-card.dark-theme,
+  .daily-like-view-container h1,
+  .like-view.dark-theme,
+  .header-backdrop.dark-theme,
+  div.platform-username > a.dark-theme {
+    color: var(--White-Text);
+  }
+  /************************Light Theme Components********************************************************/
+
+  body.light-theme {
+    background-color: var(--White-BG);
+  }
+  .header-backdrop.light-theme {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: var(--Very-Pale-Blue-Top-BG-Pattern);
+  }
+
+  .follower-card.light-theme,
+  .like-view.light-theme {
+    background-color: var(--Light-Grayish-Blue-Card-BG);
+  }
+
+  .follower-card.light-theme:hover,
+  .like-view.light-theme:hover {
+    background-color: var(--Dark-Grayish-Blue-Text);
+  }
+  .theme-switcher.light-theme {
+    background-color: var(--light-Toggle);
+  }
+  /* Ligth Theme Text Styling */
+  .follower-card.light-theme,
+  .daily-like-view-container h1,
+  .like-view.light-theme,
+  .header-backdrop.light-theme,
+  div.platform-username > a.light-theme {
+    color: var(--Very-Dark-Blue-Text);
+  }
+  /* -------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+  body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 900px;
-    width: 100vw;
-    font-family: 'Inter', sans-serif;
-}
-/************************Header Component********************************************************/
-header{
+    height: 2847px;
+    width: 375px;
+    /* border: #343A4E 1px solid; */
+    font-family: "Inter", sans-serif;
+  }
+  /************************Header Component********************************************************/
+  header {
     position: absolute;
     left: 40px;
-    display: inline-block;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 75px;
-    width: 1440px;
-}
-.header-backdrop{
-    height: 289px;
-    width: 100vw;
-    position: absolute;
-    left: 300px;
-    margin: 0 auto;
-}
-
-.header-content{
     display: flex;
+    display: inline-block;
+    flex-direction: column;
     justify-content: space-between;
-    width: 1342px;
-    height: 289px;
-    position: relative;
-    top: 75px;
-    margin: 0 auto;
-}
-.header-content hr{
-    display: none;
-}
-.headerliner{
-    width: 400px;
-    height: 62px;
-}
-.headliner h1{
-   font-size: 32px;
-   font-weight: 600; 
-}
-.headerliner h2{
-    font-size: 17px;
-}
-.title-container{
+    height: 112px;
+    width: 326px;
+  }
+  .header-content hr {
+    display: block;
+    margin: 0px;
+    position: absolute;
+    top: 46px;
+    width: 94%;
+    border: 0px;
+    margin: 20px 0%;
+  }
+  .header-backdrop {
+    position: absolute;
+    /* top: -32px; */
+    top: -64px;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 125vw;
+    /* top: -32px; */
+  }
 
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    width: 326px;
+    height: 112px;
+    position: relative;
+    /* right: -49px; */
+    top: 35px;
+  }
+  .headliner {
+    width: 326px;
+    height: 31px;
+  }
+  .headliner h1 {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 7px;
+  }
+  .headerliner h2 {
+    font-size: 8px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+  }
+  .title-container {
     display: flex;
     flex-direction: column;
     height: 62px;
-    width: 400px; 
-   
-}
-main{
-
-position: relative;
-
-top: 100px;
-
-display: flex;
-
-flex-direction: column;
-
-height: 728px;
-
-width: 1342px;
-
-margin: 0 auto;
-}
-/************************Theme Switcher Component********************************************************/
-.theme-switcher-container{
+    width: 326px;
+  }
+  main {
     position: absolute;
-    left:90%;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 326px;
+  }
+  /************************Theme Switcher Component********************************************************/
+  .theme-switcher-container {
+    position: absolute;
+    left: 3%;
+    top: 80px;
     display: flex;
     flex-direction: row;
-}
-.theme-switcher-container p{
+  }
+  .theme-switcher-container p {
+    display: block;
     position: relative;
     top: 8px;
     right: 10px;
     font-size: 14px;
-}
-/* Button Styling */
-.theme-switcher{
+  }
+  /* Button Styling */
+  .theme-switcher {
     display: block;
+    position: relative;
+    left: 166px;
     height: 31px;
     width: 59px;
     border-radius: 14px;
-    background-color:#49CD94;
-    padding: 0px;
-}
-.theme-switch-btn{
-    display: inline-block;
+    background-color: #49cd94;
+    /* vertical-align: middle; */
+  }
+  .theme-switch-btn {
     position: relative;
     height: 22px;
     width: 22px;
     border-radius: 50px;
-    background-color:#343A4E;
-    /* top: 14%; */
-    top: 4px;
-    left: 5px;
-    /* left: 8%; */
-    margin-left:0px;
-}
-/************************************** Stat-Container *****************************************************/
-.stat-container{
+    background-color: #343a4e;
+    top: 14%;
+    left: 8%;
+  }
+  /************************************** Stat-Container *****************************************************/
+  .stat-container {
     display: flex;
-    /* position: absolute; */
-    width: 1342px;
-    height: 728px;
     flex-direction: column;
+    position: absolute;
+    width: 326px;
+    height: 728px;
     top: 158px;
     left: 50px;
-}
-/*  */
-.negaGrowthIndicator{
-    color:var(--Bright-Red)
-}
-.posiGrowthIndicator{
-    color:var(--Lime-Green);
-}
-/************************Follower-Stat Components********************************************************/
-.follower-stat-container{
+  }
+  /************************Follower-Stat Components********************************************************/
+  /* LAST THING YOU CHANGED WIDTH OF*/
+  .follower-stat-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    height: 275px;
-    width: 1342px;
-}
-.follower-card{
+    height: 1440px;
+    width: 326px;
+  }
+  .follower-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -411,550 +956,123 @@ margin: 0 auto;
     width: 309px;
     border-radius: 7px;
     overflow: hidden;
-}
-.platform-username{
+    position: relative;
+    margin-top: 50px;
+  }
+  .platform-username {
     display: flex;
     flex-direction: row;
-    height:22px;
+    height: 22px;
     /* width:89px; */
     position: relative;
-    top:37px;
+    top: 37px;
     font-size: 16px;
     /* color:white */
-}
-.follower-count figure{
+  }
+  .follower-count figure {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
     position: relative;
     top: 52px;
-}
-.follower-count figure .follower-count{
-    font-size: 75px;
+  }
+
+  .follower-count figure .follower-count {
+    font-size: 70px;
     font-weight: 600;
-}
-.follower-count figure p{
+  }
+  .follower-count figure p {
     font-size: 16px;
-    /* font-weight: lighter; */
-}
-.follower-count figure p:nth-child(2){
-    color: var(--Dark-Grayish-Blue-Text);
-    letter-spacing: 10px;
-    font-weight: 600;
-}
-div.platform-username > a{
- 
+  }
+  .follower-count figure p:nth-child(2) {
+    letter-spacing: 5px;
+  }
+  div.platform-username > a {
     text-decoration: none;
-}
-.daily-follower-stat{
-    /* position: absolute; */
-    position: relative;
-    /* top: 25px; */
-    top: 85px;
-    display: flex;
-    flex-direction: row;
-    width: fit-content;
-    height: 19px;
-    flex-grow: inherit;
-    font-size: 10px;
-}
-/************************ Daily Like View Stat Components********************************************************/
-/* .daily-like-view-container and all of it's contents*/
-.daily-like-view-container{
+  }
+  .daily-follower-stat {
+    position: absolute;
+    top: 220px;
+    font-size: 20px;
+  }
+  /************************ Daily Like View Stat Components********************************************************/
+  /* .daily-like-view-container and all of it's contents*/
+  .daily-like-view-container {
     display: flex;
     flex-direction: column;
     height: 404px;
-    width: 1342px;
-}
-.daily-like-view-container h1{
+    width: 326px;
+  }
+  .daily-like-view-container h1 {
     display: flex;
     flex-direction: row;
     height: fit-content;
     width: fit-content;
-}
-.daily-like-deck{
+  }
+  .daily-like-deck {
     display: flex;
-    flex-direction: row;
-    align-content: flex-start;
-    flex-wrap: wrap;
+    flex-direction: column;
+    /* align-content: flex-start; */
+    /* flex-wrap: wrap; */
     justify-content: space-between;
-    height: 404px;
-    width: 1342px;
-}
-.daily-like-view-cards{
+    height: 1440px;
+    width: 326px;
+  }
+  .daily-like-view-cards {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     position: relative;
     bottom: 10px;
-    /* top: 100px; */
-    margin-top:27px;
-    height: 152px;
-    width: 652px;
+    margin-top: 27px;
+    height: 320px;
+    width: 326px;
     border-radius: 10px;
-}
-/******************************************* Like-View-Card and it's Child Elements **********************************************/
-.like-view{
-    background-color: var(--Dark-Desaturated-Blue-Card-BG);
+  }
+  /******************************************* Like-View-Card and it's Child Elements **********************************************/
+  .like-view {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     flex-wrap: wrap;
     height: 150px;
     width: 305px;
     border-radius: 5px;
-}
-/* .like-view:hover{
-    background-color: var(--Dark-Desaturated-Blue-Card-BG);
-} */
-.l-v{
+  }
+  .l-v {
     display: block;
     position: relative;
-    top:22px;
+    top: 22px;
     left: 29px;
-    height:75px ;
+    height: 75px;
     width: 151px;
     font-size: 14px;
     font-weight: 600;
-}
-.like-view .s-media-icon{
-    height:75px ;
+  }
+  .like-view .s-media-icon {
+    height: 75px;
     width: 151px;
     position: relative;
     top: 25px;
     left: 80px;
-}
-.l-v-qty{
-    height:75px ;
+  }
+  .l-v-qty {
+    height: 75px;
     width: 151px;
-    position:relative;
-    top:5px;
-    left:29px;
+    position: relative;
+    top: 5px;
+    left: 29px;
     font-size: 30px;
     font-weight: 600;
-}
-.like-view .stat{
-    height:75px;
+  }
+  .like-view .stat {
+    height: 75px;
     width: 151px;
     position: relative;
     top: 18px;
     left: 80px;
-    font-size:15px;
+    font-size: 15px;
     background-image: url(images/icon-up.svg);
-}
-
-/* Mobile Media Query */
-/* .25 */
-/* TODO show/hide hr element for  */
-@media all and (max-width:376px){
-    .attribution { 
-        display: flex;
-        /* flex-flow: column-reverse; */
-        font-size: 11px; 
-        text-align: center; 
-        position:relative; 
-        top:2870px;
-        margin-top: -50px;
-    }
-    .follower-count figure{
-        display: block;
-        height: 20px;
-        width: 20px;
-    }
-    .sm-icon{
-        position: relative;
-        right: 10px;
-    }
-    /* Note - Refactor so social media profile icons are dynamically retrieved */
-    
-    /* Facebook card styling */
-    .facebook-icon{
-        display: block;
-        height: 20px;
-        width: 20px;
-        background-image:url(../images/icon-facebook.svg);
-        background-repeat: no-repeat;
-    }
-    .facebook-decoration{
-        display: block;
-        height: 10px;
-        width: 100%;
-        background-color: var(--Facebook);
-    }
-    /* Instagram card styling */
-    .instagram-icon{
-        display: block;
-        height: 20px;
-        width: 20px;
-        background-image:url(../images/icon-instagram.svg);
-        background-repeat: no-repeat;
-    }
-    .instagram-decoration{
-        display: block;
-        height: 10px;
-        width: 100%;
-        background: linear-gradient(0.25turn,var(--Instagram1),var(--Instagram2));
-    }
-    /* Twitter card styling */
-    .twitter-icon{
-        display: block;
-        height: 20px;
-        width: 20px;
-        background-image:url(../images/icon-twitter.svg);
-        background-repeat: no-repeat;
-    }
-    .twitter-decoration{
-        display: block;
-        height: 10px;
-        width: 100%;
-        background-color: var(--Twitter);
-    }
-    /* Youtubes Card Styling */
-    .youtube-icon{
-        display: block;
-        height: 20px;
-        width: 20px;
-        background-image:url(../images/icon-youtube.svg);
-        background-repeat: no-repeat;
-    }
-    .youtube-decoration{
-        display: block;
-        height: 10px;
-        width: 100%;
-        background-color: var(--YouTube);
-    }
-    .negative-growth{
-        display: block;
-        width:15px;
-        height:11px;
-        background-image: url(../images/icon-down.svg);
-        background-repeat: no-repeat;
-    }
-    .positive-growth{
-        display: block;
-        width:15px;
-        height:11px;
-        background-image: url(../images/icon-up.svg);
-        background-repeat: no-repeat;
-    }
-    
-    
-    /****************************************Theme Switcher Styling******************************************************************/
-    
-    /************************Dark Theme Components********************************************************/
-    body.dark-theme{
-        background-color: var(--Very-Dark-Blue-BG);
-    }
-    .header-backdrop.dark-theme{
-        position: absolute;
-        /* top: -32px; */
-        left:0px;
-        background-color: var(--Very-Dark-Blue-Top-BG-Pattern);
-    }
-    .header-content hr{
-        border-top: 1px solid var(--Desaturated-Blue-Text);
-    }
-    .follower-card.dark-theme, .like-view.dark-theme{
-        background-color: var(--Dark-Desaturated-Blue-Card-BG);
-    }
-    
-    .follower-card.dark-theme:hover,.like-view.dark-theme:hover{
-        cursor: pointer;
-        background-color: var(--Desaturated-Blue-Text);
-    }
-    .theme-switcher.dark-theme{
-        background-color: linear-gradient(0.25turn,--dark-Toggle-color1,--dark-Toggle-color2)
-    }
-    /* Dark mode Text Styling*/
-    .follower-card.dark-theme, .daily-like-view-container h1,.like-view.dark-theme,.header-backdrop.dark-theme,div.platform-username > a.dark-theme{
-        color:var(--White-Text); 
-    }
-    /************************Light Theme Components********************************************************/
-    
-    body.light-theme{
-        background-color: var(--White-BG);
-    }
-    .header-backdrop.light-theme{
-        position: absolute; 
-        top:0px;
-        left:0px; 
-        background-color: var(--Very-Pale-Blue-Top-BG-Pattern);    
-    }
-    
-    .follower-card.light-theme, .like-view.light-theme{
-        background-color: var(--Light-Grayish-Blue-Card-BG);
-    }
-    
-    .follower-card.light-theme:hover,.like-view.light-theme:hover{
-        background-color: var(--Dark-Grayish-Blue-Text);
-    }
-    .theme-switcher.light-theme{
-        background-color: var(--light-Toggle);
-    }
-    /* Ligth Theme Text Styling */
-    .follower-card.light-theme, .daily-like-view-container h1,.like-view.light-theme,.header-backdrop.light-theme,div.platform-username > a.light-theme{
-        color:var(--Very-Dark-Blue-Text); 
-    }
-    /* -------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-    body{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height:2847px;
-        width: 375px;
-        /* border: #343A4E 1px solid; */
-        font-family: 'Inter', sans-serif;
-    }
-    /************************Header Component********************************************************/
-    header{
-        position: absolute;
-        left: 40px;
-        display: flex;
-        display: inline-block;
-        flex-direction:column ;
-        justify-content: space-between;
-        height: 112px;
-        width: 326px;
-    }
-    .header-content hr{
-        display: block;
-        margin: 0px;
-        position: absolute;
-        top: 46px;
-        width: 94%;
-        border: 0px;
-        margin: 20px 0%;
-    }
-    .header-backdrop{
-        position: absolute;
-        /* top: -32px; */
-        top: -64px;
-        display: flex;
-        flex-direction: column;
-        height: fit-content;
-        width: 125vw;
-        /* top: -32px; */
-
-    }
-    
-    .header-content{
-        display: flex;
-        flex-direction: column;
-        width: 326px;
-        height: 112px;
-        position: relative;
-        /* right: -49px; */
-        top: 35px;
-    }
-    .headliner{
-        width: 326px;
-        height: 31px; 
-    }
-    .headliner h1{
-       font-size: 25px;
-       font-weight: 600; 
-       margin-bottom: 7px;
-    }
-    .headerliner h2{
-        font-size: 8px;
-        margin-top: 2px;
-        margin-bottom: 10px;
-    }
-    .title-container{
-        display: flex;
-        flex-direction: column;
-        height: 62px;
-        width: 326px;
-    }
-    main{
-        position: absolute;
-        top: 0px;
-        display: flex;
-        flex-direction: column;
-        flex:  1 1 auto;
-        width: 326px;
-    }
-    /************************Theme Switcher Component********************************************************/
-    .theme-switcher-container{
-        position: absolute;
-        left:3%;
-        top: 80px;
-        display: flex;
-        flex-direction: row;
-    }
-    .theme-switcher-container p{
-        display: block;
-        position: relative;
-        top: 8px;
-        right: 10px;
-        font-size: 14px;
-    }
-    /* Button Styling */
-    .theme-switcher{
-        display: block;
-        position: relative;
-        left: 166px;
-        height: 31px;
-        width: 59px;
-        border-radius: 14px;
-        background-color:#49CD94;
-        /* vertical-align: middle; */
-    }
-    .theme-switch-btn{
-        position: relative;
-        height: 22px;
-        width: 22px;
-        border-radius: 50px;
-        background-color:#343A4E;
-        top: 14%;
-        left: 8%;
-    }
-    /************************************** Stat-Container *****************************************************/
-    .stat-container{
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        width: 326px;
-        height: 728px;
-        top: 158px;
-        left: 50px;
-    }
-    /************************Follower-Stat Components********************************************************/
-    /* LAST THING YOU CHANGED WIDTH OF*/
-    .follower-stat-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 1440px;
-        width: 326px;
-    }
-    .follower-card{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 262px;
-        width: 309px;
-        border-radius: 7px;
-        overflow: hidden;
-        position: relative;
-        margin-top: 50px;
-    }
-    .platform-username{
-        display: flex;
-        flex-direction: row;
-        height:22px;
-        /* width:89px; */
-        position: relative;
-        top:37px;
-        font-size: 16px;
-        /* color:white */
-    }
-    .follower-count figure{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-decoration: none;
-        position: relative;
-        top: 52px;
-    }
-
-    .follower-count figure .follower-count{
-        font-size: 70px;
-        font-weight: 600;
-    }
-    .follower-count figure p{
-        font-size: 16px;
-    }
-    .follower-count figure p:nth-child(2){
-        
-        letter-spacing: 5px;
-    }
-    div.platform-username > a{
-        text-decoration: none;
-    }
-    .daily-follower-stat{
-        position: absolute;
-        top: 220px;
-        font-size: 20px;
-    }
-    /************************ Daily Like View Stat Components********************************************************/
-    /* .daily-like-view-container and all of it's contents*/
-    .daily-like-view-container{
-        display: flex;
-        flex-direction: column;
-        height: 404px;
-        width: 326px;
-    }
-    .daily-like-view-container h1{
-        display: flex;
-        flex-direction: row;
-        height: fit-content;
-        width: fit-content;
-    }
-    .daily-like-deck{
-        display: flex;
-        flex-direction: column;
-        /* align-content: flex-start; */
-        /* flex-wrap: wrap; */
-        justify-content: space-between;
-        height: 1440px;
-        width: 326px;
-    }
-    .daily-like-view-cards{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: relative;
-        bottom: 10px;
-        margin-top:27px;
-        height: 320px;
-        width: 326px;
-        border-radius: 10px;
-    }
-    /******************************************* Like-View-Card and it's Child Elements **********************************************/
-    .like-view{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        height: 150px;
-        width: 305px;
-        border-radius: 5px;
-    }
-    .l-v{
-        display: block;
-        position: relative;
-        top:22px;
-        left: 29px;
-        height:75px ;
-        width: 151px;
-        font-size: 14px;
-        font-weight: 600;
-    }
-    .like-view .s-media-icon{
-        height:75px ;
-        width: 151px;
-        position: relative;
-        top: 25px;
-        left: 80px;
-    }
-    .l-v-qty{
-        height:75px ;
-        width: 151px;
-        position:relative;
-        top:5px;
-        left:29px;
-        font-size: 30px;
-        font-weight: 600;
-    }
-    .like-view .stat{
-        height:75px ;
-        width: 151px;
-        position: relative;
-        top: 18px;
-        left: 80px;
-        font-size:15px;
-        background-image: url(images/icon-up.svg);
-    }
+  }
 }
