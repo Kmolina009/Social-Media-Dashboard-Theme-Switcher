@@ -746,6 +746,8 @@ div.platform-username > a{
         position: relative;
         /* right: -49px; */
         top: 35px;
+        /* margin: 0 auto; */
+        /* right: -3%; */
     }
     .headliner{
         width: 326px;
@@ -774,6 +776,9 @@ div.platform-username > a{
         flex-direction: column;
         flex:  1 1 auto;
         width: 326px;
+        /* margin: 0 auto; */
+        /* margin-left: 21px; */
+        margin-left: 5%;
     }
     /************************Theme Switcher Component********************************************************/
     .theme-switcher-container{
